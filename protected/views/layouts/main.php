@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Urban Decay</title>
+	<title>kering</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="format-detection" content="telephone=no">
 	<!--禁用手机号码链接(for iPhone)-->
@@ -10,7 +10,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<!--控制全屏时顶部状态栏的外，默认白色-->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="Keywords" content="">
+	<meta name="Keywords" content="kering">
 	<meta name="Description" content="...">
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/UD/reset.css" />

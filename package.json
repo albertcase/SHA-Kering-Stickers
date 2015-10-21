@@ -1,0 +1,24 @@
+{
+  "name": "sha-kering-stickers",
+  "version": "1.0.0",
+  "description": "For Kering Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:samecode/sha-kering-stickers.git"
+  },
+  "keywords": [
+    "Kering"
+  ],
+  "author": "EvelynZhang",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.4.2"
+  }
+}
