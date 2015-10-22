@@ -12,11 +12,19 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="Keywords" content="kering">
 	<meta name="Description" content="...">
+	<!-- the development css-->
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/frontend/css/style.css" />
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/rem.js"></script>
+	<!-- the production css-->
+	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/dist/css/style.css" />-->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/UD/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/UD/style.css" />
+
 </head>
 <body>
+	<div class="logo">
+		<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/logo.png" alt=""/>
+	</div>
 	<?php echo $content; ?>
 </body>
 </html>

@@ -1,3 +1,314 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
 body {
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  font-size: 0.26rem;
+  color: #fff;
+  line-height: 1.5;
+  font-family: "Microsoft YaHei", sans-serif;
+  background-image: url("../../images/theme-kr/bg.png");
+  background-size: cover;
+}
+
+.logo {
+  position: relative;
+  top: 0.6rem;
+  width: 2.6rem;
+  height: 1.37rem;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+.page {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 2.7rem;
+  min-height: 10rem;
+  box-sizing: border-box;
+}
+
+.page-2 {
+  display: block;
+}
+
+.page-1 {
+  text-align: center;
+}
+.page-1 .p1-title {
+  margin: 0 auto 0rem;
+  width: 5.6rem;
+  padding: 0.2rem;
+  font-size: 0.34rem;
+  background: #60457f;
+}
+.page-1 .p1-des {
+  margin: 0.4rem auto 0.4rem;
+  width: 6rem;
+  font-size: 0.25rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+.page-1 .p1-activity {
+  font-size: 0.28rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+.page-1 .p1-activity span {
+  text-decoration: underline;
+}
+.page-1 .user-vertify {
+  margin-top: 0.2rem;
+}
+.page-1 .user-vertify label {
+  font-size: 0.42rem;
+  display: block;
+}
+.page-1 .user-vertify .user-pwd {
+  width: 3rem;
+  height: 0.5rem;
+  margin-top: 0.1rem;
+  background: transparent;
+  border: none;
+  border-bottom: #fff 2px solid;
+  color: #fff;
+  font-size: 0.3rem;
+  text-align: center;
+  -webkit-border-radius: 0;
+  -ms-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.page-1 .user-vertify .user-pwd:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+.page-1 .user-vertify .button-submit {
+  position: relative;
+  width: 2.8rem;
+  height: 1rem;
+  margin: 0.6rem auto 0;
+}
+.page-1 .user-vertify .button-submit .icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.2rem;
+  display: block;
+  width: 0.55rem;
+  height: 1.02rem;
+  background: url("../../images/theme-kr/p1-1.png") no-repeat;
+  background-size: 100%;
+}
+.page-1 .user-vertify .user-submit {
+  -webkit-appearance: none;
+  width: 2.8rem;
+  height: 1rem;
+  background: #61457f;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  display: block;
+  border: none;
+  color: #fff;
+  font-size: 0.4rem;
+  text-indent: 0.5rem;
+}
+
+.page-2 .p2-des {
+  text-align: center;
+  font-size: 0.28rem;
+  line-height: 2;
+  margin-top: 0.5rem;
+}
+.page-2 .p2-product {
+  position: relative;
+  width: 3.3rem;
+  height: 3.33rem;
+  margin: 0.5rem auto 0;
+}
+.page-2 .p2-product .pp {
+  position: absolute;
+}
+.page-2 .p2-product .pp-1 {
+  width: 1rem;
+  height: 0.75rem;
+  background: #d1aef7;
+  z-index: 1;
+  top: 2rem;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.page-2 .p2-product .pp-2 {
+  z-index: 2;
+  left: 0.5rem;
+  width: 2.34rem;
+  height: 3.33rem;
+}
+.page-2 .p2-product .pp-3 {
+  z-index: 3;
+  top: 2rem;
+  opacity: 0.9;
+  font-size: 0.32rem;
+  width: 3.2rem;
+  height: 0.75rem;
+  background: #87597e;
+  text-indent: 0.6rem;
+  line-height: 0.75rem;
+}
+.page-2 .p2-product .pp-3:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.37rem;
+  right: 0.8rem;
+  height: 2px;
+  width: 0.4rem;
   background: #fff;
+  -webkit-border-radius: 20%;
+  -ms-border-radius: 20%;
+  -moz-border-radius: 20%;
+  -o-border-radius: 20%;
+  border-radius: 20%;
+}
+.page-2 .p2-product .pp-3:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.19rem;
+  right: 0.7rem;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-top: #fff 2px solid;
+  border-right: #fff 2px solid;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.page-2 .p2-bottom-bg {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 3rem;
+}
+.page-2 .p2-bottom-bg > div {
+  width: 6.4rem;
+  height: 1.5rem;
+  background: #513470;
+  position: absolute;
+}
+.page-2 .p2-bottom-bg .bleft {
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 57px #b44f38;
+  -ms-box-shadow: 0px 0px 57px #b44f38;
+  -moz-box-shadow: 0px 0px 57px #b44f38;
+  -o-box-shadow: 0px 0px 57px #b44f38;
+  box-shadow: 0px 0px 57px #b44f38;
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  transform: rotate(15deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.page-2 .p2-bottom-bg .bright {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  -o-transform-origin: 100% 0;
+  transform-origin: 100% 0;
 }
