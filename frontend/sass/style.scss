@@ -29,7 +29,7 @@ img{width: 100%;}
   min-height: 10rem;
   box-sizing: border-box;
 }
-.page-2{
+.page-3{
   display: block;
 }
 
@@ -174,33 +174,57 @@ img{width: 100%;}
       }
     }
   }
-  .p2-bottom-bg{
+
+}
+
+.p2-bottom-bg{
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  @include size(100%,3rem);
+  >div{
+    @include size(6.4rem,1.5rem);
+    background: #513470;
     position: absolute;
+  }
+  .bleft{
+    left: 0;
     bottom: 0;
-    overflow: hidden;
-    @include size(100%,3rem);
-    >div{
-      @include size(6.4rem,1.5rem);
-      background: #513470;
-      position: absolute;
-    }
-    .bleft{
-      left: 0;
-      bottom: 0;
-      z-index: 2;
-      @include vendor-prefix(box-shadow,0px 0px 57px #b44f38);
-      @include transform(rotate(15deg));
-      @include transform-origin(0 0);
-    }
-    .bright{
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      @include transform(rotate(-15deg));
-      @include transform-origin(100% 0);
-    }
+    z-index: 2;
+    @include vendor-prefix(box-shadow,0px 0px 57px #b44f38);
+    @include transform(rotate(15deg));
+    @include transform-origin(0 0);
+  }
+  .bright{
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    @include transform(rotate(-15deg));
+    @include transform-origin(100% 0);
+  }
+}
+//------End page2----
+
+
+//For page3--> photo
+.camera-block{
+    position: relative;
+    @include size(6.3rem,6.3rem);
+  margin: 0 auto;
+  overflow: hidden;
+  img{
+    position: relative;
+    z-index: 1;
+  }
+  .upload-photo{
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    @include size(6.3rem,7.3rem);
+    z-index: 2;
   }
 }
 
 
-//------End page2----
+
+//------End page3----

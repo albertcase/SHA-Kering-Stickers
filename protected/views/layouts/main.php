@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/frontend/css/style.css" />
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/rem.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/common.js"></script>
 	<!-- the production css-->
 	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/dist/css/style.css" />-->
 
@@ -26,6 +27,10 @@
 		<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/logo.png" alt=""/>
 	</div>
 	<?php echo $content; ?>
+	<div class="p2-bottom-bg">
+		<div class="bleft"></div>
+		<div class="bright"></div>
+	</div>
 </body>
 </html>
 

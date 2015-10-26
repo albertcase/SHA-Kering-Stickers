@@ -41,13 +41,30 @@
                 点击支持
             </div>
         </div>
-        <div class="p2-bottom-bg">
-            <div class="bleft"></div>
-            <div class="bright"></div>
-        </div>
     </div>
     <!--For the photo page-->
-    <div class="page page-3"></div>
+    <div class="page page-3">
+        <div class="camera-block">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-0.png" alt=""/>
+            <input type="file" class="upload-photo"/>
+        </div>
+        <div class="photo-frame">
+            <ul>
+                <li class="item item-1">
+                    <img src="" alt=""/>
+                </li>
+                <li class="item item-2"></li>
+                <li class="item item-3"></li>
+                <li class="item item-4"></li>
+            </ul>
+        </div>
+        <div class="p3-buttons">
+            <div class="btn-back">
+                返回
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
