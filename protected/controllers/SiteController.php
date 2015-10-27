@@ -12,9 +12,9 @@ class SiteController extends Controller
 		$this->render('index');
 	}
 
-	public function actionSpring()
+	public function actionGallery()
 	{
-		$this->render('spring');
+		$this->render('gallery');
 	}
 
 	public function actionProduct(){

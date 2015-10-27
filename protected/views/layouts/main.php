@@ -15,6 +15,7 @@
 	<!-- the development css-->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/frontend/css/style.css" />
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/jquery.bxslider.min.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/rem.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/common.js"></script>
 	<!-- the production css-->

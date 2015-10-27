@@ -44,28 +44,38 @@
     </div>
     <!--For the photo page-->
     <div class="page page-3">
-        <div class="camera-block show">
+        <div class="camera-block ">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-0.png" alt=""/>
             <input type="file" class="upload-photo"/>
         </div>
-        <div class="photo-frame">
+        <div class="photo-frame show">
             <div class="upload-img">
-                <img src="" alt=""/>
             </div>
-            <ul class="slider">
-                <li class="item item-1">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-1.png" alt=""/>
-                </li>
-                <li class="item item-2">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-                </li>
-                <li class="item item-3">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-3.png" alt=""/>
-                </li>
-                <li class="item item-4">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-4.png" alt=""/>
-                </li>
-            </ul>
+            <div class="slider-frame ">
+                <ul class="slider">
+                    <li class="">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-1.png" alt=""/>
+                    </li>
+                    <li class="">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
+                    </li>
+                    <li class="">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-3.png" alt=""/>
+                    </li>
+                    <li class="">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-4.png" alt=""/>
+                    </li>
+                </ul>
+            </div>
+            <div class="slide-words">
+                <ul class="words-list">
+                    <li>Breaking the silence not lives I support #BeHerVoice#</li>
+                    <li>Together, let’s raise our voice against
+                        violence #BeHerVoice#</li>
+                    <li>I support the White Ribbon  for Women campaign #BeHerVoice#</li>
+                </ul>
+            </div>
+            <h4 class="title-frame">给勇敢美丽的你挑选一个相框</h4>
         </div>
         <div class="p3-buttons">
             <div class="btn-back">
@@ -77,6 +87,28 @@
         </div>
 
     </div>
+
+    <!-- render photo-->
+    <div class="page page-4">
+        <div class="p4-photo">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-0.png" alt=""/>
+        </div>
+        <div class="p4-2">
+            感谢您的声援！点滴关爱，汇聚海洋。<br>
+            将您的支持转发到朋友圈，即可参与BeHerVoice抽奖活动，<br>
+            赢取Stella McCartney Falabella时尚包袋。<br>
+            我们的获奖名单将于11月26日公布，请大家持续关注！<br>
+        </div>
+        <div class="p3-buttons">
+            <div class="btn-back">
+                查看支持者
+            </div>
+            <div class="btn-ok">
+                分享到朋友圈
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

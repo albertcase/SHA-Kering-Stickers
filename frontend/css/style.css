@@ -91,10 +91,6 @@ img {
   box-sizing: border-box;
 }
 
-.page-3 {
-  display: block;
-}
-
 .page-1 {
   text-align: center;
 }
@@ -349,13 +345,11 @@ img {
   margin-left: -3.2rem;
 }
 .photo-frame .upload-img {
-  position: absolute;
+  position: relative;
   top: 0;
   z-index: 1;
-  width: 5.8rem;
-  height: 4.7rem;
-  left: 50%;
-  margin-left: -2.9rem;
+  width: 6.4rem;
+  height: 6.4rem;
   overflow: hidden;
 }
 .photo-frame .slider {
@@ -366,9 +360,64 @@ img {
   left: 0;
   z-index: 2;
 }
-.photo-frame .slider .item {
+.photo-frame .slider li {
   position: absolute;
   left: 0;
+}
+.photo-frame .title-frame {
+  font-size: 0.28rem;
+  text-align: center;
+  margin-top: 0.3rem;
+  letter-spacing: 2px;
+}
+
+.bx-wrapper .bx-viewport {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+.bx-wrapper .bx-pager {
+  display: none;
+}
+.bx-wrapper .bx-controls-direction a {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 0.4rem;
+  height: 1.2rem;
+  overflow: hidden;
+  text-indent: -999em;
+  margin-top: -0.6rem;
+}
+.bx-wrapper .bx-controls-direction a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.8rem;
+  height: 0.04rem;
+  background: #fff;
+  transform: rotate(55deg);
+  transform-origin: 0 0;
+}
+.bx-wrapper .bx-controls-direction a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.8rem;
+  height: 0.04rem;
+  background: #fff;
+  transform: rotate(-55deg);
+  transform-origin: 0 0;
+}
+.bx-wrapper .bx-controls-direction a.bx-prev {
+  left: -0.5rem;
+}
+.bx-wrapper .bx-controls-direction a.bx-next {
+  right: -0.5rem;
+  transform: rotate(180deg);
 }
 
 .p3-buttons {
