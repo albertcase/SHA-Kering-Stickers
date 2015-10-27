@@ -397,7 +397,15 @@ img {
   width: 0.8rem;
   height: 0.04rem;
   background: #fff;
+  -webkit-transform: rotate(55deg);
+  -moz-transform: rotate(55deg);
+  -ms-transform: rotate(55deg);
+  -o-transform: rotate(55deg);
   transform: rotate(55deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
   transform-origin: 0 0;
 }
 .bx-wrapper .bx-controls-direction a:after {
@@ -409,7 +417,15 @@ img {
   width: 0.8rem;
   height: 0.04rem;
   background: #fff;
+  -webkit-transform: rotate(-55deg);
+  -moz-transform: rotate(-55deg);
+  -ms-transform: rotate(-55deg);
+  -o-transform: rotate(-55deg);
   transform: rotate(-55deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
   transform-origin: 0 0;
 }
 .bx-wrapper .bx-controls-direction a.bx-prev {
@@ -417,6 +433,10 @@ img {
 }
 .bx-wrapper .bx-controls-direction a.bx-next {
   right: -0.5rem;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -463,6 +483,10 @@ img {
   border-right: #fff 2px solid;
   position: absolute;
   top: 50%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   margin-top: -0.15rem;
 }

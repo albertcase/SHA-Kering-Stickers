@@ -287,8 +287,8 @@ img{width: 100%;}
         width: 0.8rem;
         height: 0.04rem;
         background: #fff;
-        transform: rotate(55deg);
-        transform-origin: 0 0;
+        @include transform(rotate(55deg));
+        @include transform-origin(0 0);
       }
       &:after{
         content: '';
@@ -299,15 +299,15 @@ img{width: 100%;}
         width: 0.8rem;
         height: 0.04rem;
         background: #fff;
-        transform: rotate(-55deg);
-        transform-origin: 0 0;
+        @include transform(rotate(-55deg));
+        @include transform-origin(0 0);
       }
       &.bx-prev{
         left: -0.5rem;
       }
       &.bx-next{
         right: -0.5rem;
-        transform: rotate(180deg);
+        @include transform(rotate(180deg));
       }
     }
   }
@@ -353,7 +353,7 @@ img{width: 100%;}
       border-right: #fff 2px solid;
       position: absolute;
       top: 50%;
-      transform: rotate(-45deg);
+      @include transform(rotate(-45deg));
       margin-top: -0.15rem;
     }
   }
