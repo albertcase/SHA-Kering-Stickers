@@ -314,7 +314,12 @@ img {
   transform-origin: 100% 0;
 }
 
+.show {
+  display: block !important;
+}
+
 .camera-block {
+  display: none;
   position: relative;
   width: 6.3rem;
   height: 6.3rem;
@@ -332,4 +337,83 @@ img {
   width: 6.3rem;
   height: 7.3rem;
   z-index: 2;
+}
+
+.photo-frame {
+  display: none;
+  position: relative;
+  top: 0;
+  width: 6.4rem;
+  height: 6.4rem;
+  left: 50%;
+  margin-left: -3.2rem;
+}
+.photo-frame .upload-img {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 5.8rem;
+  height: 4.7rem;
+  left: 50%;
+  margin-left: -2.9rem;
+  overflow: hidden;
+}
+.photo-frame .slider {
+  position: absolute;
+  width: 6.4rem;
+  height: 6.4rem;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.photo-frame .slider .item {
+  position: absolute;
+  left: 0;
+}
+
+.p3-buttons {
+  position: absolute;
+  z-index: 10;
+  bottom: 0.2rem;
+  width: 100%;
+  height: 0.7rem;
+  letter-spacing: 4px;
+}
+.p3-buttons .btn-back {
+  position: absolute;
+  top: 15%;
+  left: 0.3rem;
+  font-size: 0.3rem;
+  text-decoration: underline;
+}
+.p3-buttons .btn-ok {
+  position: absolute;
+  width: 1.4rem;
+  height: 0.7rem;
+  right: 0.3rem;
+  font-size: 0.42rem;
+}
+.p3-buttons .btn-ok:before {
+  content: '';
+  display: block;
+  width: 0.4rem;
+  height: 0.04rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -0.02rem;
+  background: #fff;
+}
+.p3-buttons .btn-ok:after {
+  content: '';
+  display: block;
+  width: 0.3rem;
+  height: 0.3rem;
+  right: 0;
+  border-bottom: #fff 2px solid;
+  border-right: #fff 2px solid;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  margin-top: -0.15rem;
 }

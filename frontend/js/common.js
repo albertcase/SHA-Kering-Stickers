@@ -11,10 +11,12 @@ jQuery(document).ready(function($){
 
 		var reader  = new FileReader(),
 			file    = $('.upload-photo')[0].files[0],
-			preview = $('.item-1 img');
+			preview = $('.upload-img img');
 		reader.onloadend = function () {
 			//preview.src = reader.result;
 			preview.attr('src',reader.result);
+			$('.camera-block').removeClass('show');
+			$('.photo-frame').addClass('show');
 		};
 		if (file) {
 			reader.readAsDataURL(file);

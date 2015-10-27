@@ -44,23 +44,35 @@
     </div>
     <!--For the photo page-->
     <div class="page page-3">
-        <div class="camera-block">
+        <div class="camera-block show">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-0.png" alt=""/>
             <input type="file" class="upload-photo"/>
         </div>
         <div class="photo-frame">
-            <ul>
+            <div class="upload-img">
+                <img src="" alt=""/>
+            </div>
+            <ul class="slider">
                 <li class="item item-1">
-                    <img src="" alt=""/>
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-1.png" alt=""/>
                 </li>
-                <li class="item item-2"></li>
-                <li class="item item-3"></li>
-                <li class="item item-4"></li>
+                <li class="item item-2">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
+                </li>
+                <li class="item item-3">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-3.png" alt=""/>
+                </li>
+                <li class="item item-4">
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-4.png" alt=""/>
+                </li>
             </ul>
         </div>
         <div class="p3-buttons">
             <div class="btn-back">
                 返回
+            </div>
+            <div class="btn-ok">
+                确认
             </div>
         </div>
 
