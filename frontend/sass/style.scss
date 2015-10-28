@@ -1,0 +1,363 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "_animate";
+@import "_mixins";
+
+//for global style
+body{
+  font-size: 0.26rem;
+  color: #fff;
+  line-height: 1.5;
+  font-family: "Microsoft YaHei", sans-serif;
+  background-image: url("../../images/theme-kr/bg.png");
+  background-size: cover;
+}
+.logo{
+  position: relative;
+  top: 0.6rem;
+  @include size(2.6rem,1.37rem);
+  margin: 0 auto;
+}
+img{width: 100%;}
+.page{
+  display: none;
+  position: absolute;
+  @include size(100%,100%);
+  left: 0;
+  top: 0;
+  padding-top: 2.7rem;
+  min-height: 10rem;
+  box-sizing: border-box;
+}
+
+//----End global---
+
+//Start page1
+.page-1{
+  text-align: center;
+  .p1-title{
+    margin: 0 auto 0rem;
+    width: 5.6rem;
+    padding: 0.2rem;
+    font-size: 0.34rem;
+    background: #60457f;
+  }
+  .p1-des{
+    margin: 0.4rem auto 0.4rem;
+    width: 6rem;
+    font-size: 0.25rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  .p1-activity{
+    font-size: 0.28rem;
+    font-style: italic;
+    line-height:1.6;
+    span{
+      text-decoration: underline;
+    }
+  }
+  .user-vertify{
+    margin-top: 0.2rem;
+    label{
+      font-size: 0.42rem;
+      display: block;
+    }
+    .user-pwd{
+      width: 3rem;
+      height: 0.5rem;
+      margin-top: 0.1rem;
+      background: transparent;
+      border: none;
+      border-bottom: #fff 2px solid;
+      color: #fff;
+      font-size: 0.3rem;
+      text-align: center;
+      @include vendor-prefix(border-radius,0);
+      &:focus{
+        outline: -webkit-focus-ring-color auto 0px;
+      }
+    }
+    .button-submit{
+      position: relative;
+      @include size(2.8rem,1rem);
+      margin: 0.6rem auto 0;
+      .icon{
+        position: absolute;
+        left: 0.5rem;
+        top: 0.2rem;
+        display: block;
+        @include size(0.55rem,1.02rem);
+        background: url("../../images/theme-kr/p1-1.png") no-repeat;
+        background-size: 100%;
+      }
+    }
+    .user-submit{
+      -webkit-appearance: none;
+      @include size(2.8rem,1rem);
+      background: #61457f;
+      @include vendor-prefix(border-radius,5px);
+      display: block;
+      border: none;
+      color: #fff;
+      font-size: 0.4rem;
+      text-indent: 0.5rem;
+    }
+  }
+}
+
+//------End page1----
+
+//------Start page2----
+.page-2{
+  .p2-des{
+    text-align: center;
+    font-size: 0.28rem;
+    line-height: 2;
+    margin-top: 0.5rem;
+  }
+  .p2-product{
+    position: relative;
+    @include size(3.3rem,3.33rem);
+    margin: 0.5rem auto 0;
+    .pp{
+      position: absolute;
+    }
+    .pp-1{
+      @include size(1rem,0.75rem);
+      background: #d1aef7;
+      z-index: 1;
+      top: 2rem;
+      @include transform-origin(0 0);
+      @include transform(rotate(-20deg));
+    }
+    .pp-2{
+      z-index: 2;
+      left: 0.5rem;
+      @include size(2.34rem,3.33rem);
+    }
+    .pp-3{
+      z-index: 3;
+      top: 2rem;
+      opacity: 0.9;
+      font-size: 0.32rem;
+      @include size(3.2rem,0.75rem);
+      background: #87597e;
+      text-indent: 0.6rem;
+      line-height: 0.75rem;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0.37rem;
+        right: 0.8rem;
+        height: 2px;
+        width: 0.4rem;
+        background: #fff;
+        @include vendor-prefix(border-radius,20%);
+      }
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0.19rem;
+        right: 0.7rem;
+        height: 0.25rem;
+        width: 0.25rem;
+        border-top: #fff 2px solid;
+        border-right: #fff 2px solid;
+        @include transform(rotate(45deg));
+        @include transform-origin(0 0);
+      }
+    }
+  }
+
+}
+
+.p2-bottom-bg{
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  @include size(100%,3rem);
+  >div{
+    @include size(6.4rem,1.5rem);
+    background: #513470;
+    position: absolute;
+  }
+  .bleft{
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    @include vendor-prefix(box-shadow,0px 0px 57px #b44f38);
+    @include transform(rotate(15deg));
+    @include transform-origin(0 0);
+  }
+  .bright{
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    @include transform(rotate(-15deg));
+    @include transform-origin(100% 0);
+  }
+}
+//------End page2----
+
+.show{
+  display: block !important;
+}
+
+//For page3--> photo
+.camera-block{
+  display: none;
+  position: relative;
+  @include size(6.3rem,6.3rem);
+  margin: 0 auto;
+  overflow: hidden;
+  img{
+    position: relative;
+    z-index: 1;
+  }
+  .upload-photo{
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    @include size(6.3rem,7.3rem);
+    z-index: 2;
+  }
+}
+.photo-frame{
+  display: none;
+  position: relative;
+  top: 0;
+  @include size(6.4rem,6.4rem);
+  left: 50%;
+  margin-left: -3.2rem;
+  .upload-img{
+    position: relative;
+    top: 0;
+    z-index: 1;
+    @include size(6.4rem,6.4rem);
+    //left: 50%;
+    //margin-left: -2.9rem;
+    overflow: hidden;
+  }
+  .slider{
+    //display: none;
+    position: absolute;
+    @include size(6.4rem,6.4rem);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    li{
+      position: absolute;
+      left: 0;
+    }
+  }
+  .title-frame{
+    font-size: 0.28rem;
+    text-align: center;
+    margin-top: 0.3rem;
+    letter-spacing: 2px;
+  }
+}
+
+//for boxslider
+.bx-wrapper{
+  .bx-viewport{
+    @include size(6.4rem,6.4rem);
+  }
+  .bx-pager{
+    display: none;
+  }
+  .bx-controls-direction{
+    a{
+      display:block;
+      position: absolute;
+      top: 50%;
+      @include size(0.4rem,1.2rem);
+      overflow: hidden;
+      text-indent: -999em;
+      margin-top: -0.6rem;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0.8rem;
+        height: 0.04rem;
+        background: #fff;
+        @include transform(rotate(55deg));
+        @include transform-origin(0 0);
+      }
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0.8rem;
+        height: 0.04rem;
+        background: #fff;
+        @include transform(rotate(-55deg));
+        @include transform-origin(0 0);
+      }
+      &.bx-prev{
+        left: -0.5rem;
+      }
+      &.bx-next{
+        right: -0.5rem;
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+}
+
+
+.p3-buttons{
+  position: absolute;
+  z-index: 10;
+  bottom: 0.2rem;
+  width: 100%;
+  height: 0.7rem;
+  letter-spacing: 4px;
+  .btn-back{
+    position: absolute;
+    top: 15%;
+    left: 0.3rem;
+    font-size: 0.3rem;
+    text-decoration: underline;
+  }
+  .btn-ok{
+    position: absolute;
+    @include size(1.4rem,0.7rem);
+    right: 0.3rem;
+    font-size: 0.42rem;
+    &:before{
+      content: '';
+      display: block;
+      @include size(0.4rem,0.04rem);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -0.02rem;
+      background: #fff;
+    }
+    &:after{
+      content: '';
+      display: block;
+      width: 0.3rem;
+      height: 0.3rem;
+      right: 0;
+      border-bottom: #fff 2px solid;
+      border-right: #fff 2px solid;
+      position: absolute;
+      top: 50%;
+      @include transform(rotate(-45deg));
+      margin-top: -0.15rem;
+    }
+  }
+}
+
+
+//------End page3----

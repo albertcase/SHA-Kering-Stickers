@@ -4,3 +4,6 @@
 /upload/
 /protected/config/main.php
 /protected/runtime/
+.idea
+.sass-cache
+node_modules
