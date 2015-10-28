@@ -50,6 +50,13 @@
         </div>
         <div class="photo-frame show">
             <div class="upload-img">
+                <div class="previewimg">
+                    <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/photo-sample.jpg" alt=""/>-->
+                </div>
+                <div class="frameimg">
+                    <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-1.png" alt=""/>-->
+                </div>
+                <div class="selected-words"></div>
             </div>
             <div class="slider-frame ">
                 <ul class="slider">
@@ -100,15 +107,22 @@
             我们的获奖名单将于11月26日公布，请大家持续关注！<br>
         </div>
         <div class="p3-buttons">
-            <div class="btn-back">
+            <div class="btn-back btn-list">
                 查看支持者
             </div>
-            <div class="btn-ok">
+            <div class="btn-ok btn-share">
                 分享到朋友圈
             </div>
         </div>
     </div>
 
-</div>
 
+</div>
+<div class="p2-bottom-bg">
+    <div class="bleft"></div>
+    <div class="bright"></div>
+</div>
+<div class="share-block">
+    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/share.png" alt=""/>
+</div>
 
