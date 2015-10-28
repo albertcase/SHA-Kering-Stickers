@@ -39,7 +39,9 @@ class ApiController extends Controller
 		$handle = fopen($folder.$filename, 'w');
 		fwrite($handle, $image);
 		fclose($handle);
-		echo $result = $folder.$filename;
+		$result = $folder.$filename;
+		echo json_encode(array('code' => 1, 'msg' => $result));
+		Yii::app()->end();
 	}
 
 	/**
