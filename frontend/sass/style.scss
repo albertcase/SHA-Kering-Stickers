@@ -15,7 +15,7 @@ body{
 .logo{
   position: relative;
   @include size(2.6rem,1.37rem);
-  margin: 0.6rem auto 0.3rem;
+  margin: 0.4rem auto 0.4rem;
 }
 img{width: 100%;}
 .page{
@@ -24,6 +24,7 @@ img{width: 100%;}
   @include size(100%,100%);
   left: 0;
   top: 0;
+  z-index: 2;
   padding-top: 2.2rem;
   min-height: 10rem;
   box-sizing: border-box;
@@ -176,6 +177,7 @@ img{width: 100%;}
 .p2-bottom-bg{
   position: absolute;
   bottom: 0;
+  z-index: 1;
   overflow: hidden;
   @include size(100%,3rem);
   >div{

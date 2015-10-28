@@ -1,5 +1,9 @@
 jQuery(document).ready(function($){
 
+	//step is represent the upload sequece
+	var step= 0,
+		uploadImgSrc,
+		frameNum;
 	function gotoPage(i){
 		$('.page').removeClass('show').eq(i).addClass('show');
 	}
@@ -29,6 +33,7 @@ jQuery(document).ready(function($){
 				$('.photo-frame').addClass('show');
 				loadSlide($('.slider'));
 				$('.btn-ok').removeClass('hide');
+				uploadImgSrc = reader.result;
 			};
 			if (file) {
 				reader.readAsDataURL(file);
@@ -43,8 +48,8 @@ jQuery(document).ready(function($){
 			console.log('finishFrame');
 			//console.log();
 			//the value is 0,1,2,3
-			var frameNum = $('.bx-pager-link.active').parent().index(),
-				curImg = $('.slider li').eq(frameNum).html();
+			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
+				var curImg = $('.slider li').eq(frameNum).html();
 			console.log(curImg);
 			$('.upload-img .frameimg').append(curImg);
 			$('.slider-frame').hide();
@@ -56,24 +61,35 @@ jQuery(document).ready(function($){
 		selectWords:function(w){
 
 		},
-		renderPhoto:function(f,p,w){
-			console.log('renderPhoto');
-			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index();
+		renderPhoto:function(f,p){
+			console.log(f);
+			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			//$('.selected-words').html(selectedWords);
 			//$('.slide-words').removeClass('show');
-			gotoPage(3);
+			//
 			$.ajax({
-				url:'',
-				type:'get',
-				dataType:'json',
-				data:{},
-				success:function(){
-
+				url:'/api/createImg',
+				type:'POST',
+				//dataType:'json',
+				data:{
+					image:p,
+					border:f,
+					text:selectedWords
+				},
+				success:function(result){
+					//console.log(result);
+					$('.p4-photo').html('<img src="'+window.location.origin+'/'+result+'">');
+					gotoPage(3);
 				}
 			})
 		}
 	};
+
+	$('.user-submit').on('touchstart', function(e){
+		e.preventDefault();
+		gotoPage(1);
+	})
 
 	$('.p2-product').on('click', function(){
 		gotoPage(2);
@@ -108,9 +124,7 @@ jQuery(document).ready(function($){
 	//	finish frame, start select words
 
 		if($(this).hasClass('mergePhoto')){
-			photo.renderPhoto();
-
-
+			photo.renderPhoto(frameNum,uploadImgSrc);
 		}else{
 			photo.finishFrame();
 		}
@@ -119,8 +133,8 @@ jQuery(document).ready(function($){
 	//start
 
 	//go to page3
-	gotoPage(3);
-	//photo.initPhoto();
+	gotoPage(2);
+	photo.initPhoto();
 	//test first
 	//loadSlide($('.words-list'));
 

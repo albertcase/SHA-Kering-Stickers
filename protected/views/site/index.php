@@ -12,7 +12,7 @@
             <span>我们邀您晒出靓照</span><br>
             赢取Stella McCartney准备的意外惊喜！
         </div>
-        <form class="user-vertify">
+        <div class="user-vertify">
             <label for="password">
                 密码
             </label>
@@ -22,7 +22,7 @@
                 <input type="submit" class="user-submit" value="确认"/>
             </div>
 
-        </form>
+        </div>
     </div>
     <!--For the introduction page-->
     <div class="page page-2">
@@ -97,9 +97,7 @@
 
     <!-- render photo-->
     <div class="page page-4">
-        <div class="p4-photo">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-0.png" alt=""/>
-        </div>
+        <div class="p4-photo"></div>
         <div class="p4-2">
             感谢您的声援！点滴关爱，汇聚海洋。<br>
             将您的支持转发到朋友圈，即可参与BeHerVoice抽奖活动，<br>
