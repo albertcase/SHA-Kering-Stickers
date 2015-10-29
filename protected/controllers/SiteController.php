@@ -17,8 +17,8 @@ class SiteController extends Controller
 		$this->render('gallery');
 	}
 
-	public function actionProduct(){
-		$this->render('product');
+	public function actionPhoto(){
+		$this->render('photo');
 	}
 
 	public function actionFounder(){

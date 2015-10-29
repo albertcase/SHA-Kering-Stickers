@@ -92,6 +92,7 @@ img {
 }
 
 .page-1 {
+  display: block;
   text-align: center;
 }
 .page-1 .p1-title {
