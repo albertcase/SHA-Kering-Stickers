@@ -34,6 +34,7 @@ jQuery(document).ready(function($){
 				loadSlide($('.slider'));
 				$('.btn-ok').removeClass('hide');
 				uploadImgSrc = reader.result;
+				step=1;
 			};
 			if (file) {
 				reader.readAsDataURL(file);
@@ -71,24 +72,42 @@ jQuery(document).ready(function($){
 			$.ajax({
 				url:'/api/createImg',
 				type:'POST',
-				//dataType:'json',
+				dataType:'json',
 				data:{
 					image:p,
 					border:f,
 					text:selectedWords
 				},
 				success:function(result){
-					//console.log(result);
-					$('.p4-photo').html('<img src="'+window.location.origin+'/'+result+'">');
+					console.log(result);
+					if(result.code==1){
+					//	success
+						$('.p4-photo').html('<img src="'+window.location.origin+'/'+result.msg+'">');
+					}
+
 					gotoPage(3);
 				}
 			})
 		}
 	};
 
+	//vertify the page
 	$('.user-submit').on('touchstart', function(e){
 		e.preventDefault();
-		gotoPage(1);
+		console.log($('.user-pwd').val());
+		$.ajax({
+			url:'/api/check',
+			type:'POST',
+			dataType:'json',
+			data:{password:$('.user-pwd').val()},
+			success:function(result){
+				if(result.code==1){
+					gotoPage(1);
+				}else{
+					alert('wrong');
+				}
+			}
+		});
 	})
 
 	$('.p2-product').on('click', function(){

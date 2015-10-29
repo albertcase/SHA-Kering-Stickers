@@ -12,14 +12,14 @@
             <span>我们邀您晒出靓照</span><br>
             赢取Stella McCartney准备的意外惊喜！
         </div>
-        <div class="user-vertify">
+        <div class="user-vertify" name="user-vertify"  action="" method="post">
             <label for="password">
                 密码
             </label>
             <input type="password" class="user-pwd"/>
             <div class="button-submit">
                 <span class="icon"></span>
-                <input type="submit" class="user-submit" value="确认"/>
+                <input type="button" class="user-submit" value="确认"/>
             </div>
 
         </div>

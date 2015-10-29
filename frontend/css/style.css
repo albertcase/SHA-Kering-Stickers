@@ -539,7 +539,7 @@ img {
 
 .page-4 .p4-photo {
   width: 6.4rem;
-  height: 6.4rem;
+  height: auto;
   margin: 0 auto;
 }
 .page-4 .p4-2 {
