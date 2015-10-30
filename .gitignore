@@ -2,7 +2,6 @@
 .vagrant
 /assets/
 /upload/
-/protected/config/main.php
 /protected/runtime/
 .idea
 .sass-cache
