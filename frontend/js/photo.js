@@ -1,5 +1,16 @@
 jQuery(document).ready(function($){
 
+	//	for canvas
+	// create a wrapper around native canvas element (with id="c")
+	var canvas = new fabric.Canvas('c');
+	canvas.setWidth($('.upload-img').width());
+	canvas.setHeight($('.upload-img').height());
+
+	canvas.on('mouse:move', function(e) {
+
+	});
+
+
 	//step is represent the upload sequece
 	var step= 0,
 		uploadImgSrc,
@@ -18,19 +29,27 @@ jQuery(document).ready(function($){
 			$('.camera-block').addClass('show');
 			$('.photo-frame').removeClass('show');
 			$('.btn-ok').addClass('hide');
-			$('.upload-img .previewimg').html('');
+			//$('.upload-img .previewimg').html('');
 		},
 		uploadPhoto:function(){
 			var reader  = new FileReader(),
 				file    = $('.upload-photo')[0].files[0],
 				preview = $('.upload-img .previewimg');
+			previewimg = $('.upload-img .previewimg img')[0];
 			reader.onloadend = function () {
-				preview.html('<img src="'+reader.result+'">');
+				//preview.html('<img src="'+reader.result+'">');
 				$('.camera-block').removeClass('show');
 				$('.photo-frame').addClass('show');
-				loadSlide($('.slider'));
+				//
 				$('.btn-ok').removeClass('hide');
 				uploadImgSrc = reader.result;
+
+				fabric.Image.fromURL(uploadImgSrc,function(imgobj){
+					imgobj.scale(0.5);
+					canvas.add(imgobj);
+				});
+
+
 				step=1;
 			};
 			if (file) {
@@ -40,18 +59,26 @@ jQuery(document).ready(function($){
 			}
 		},
 		selectFrame:function(f,p){
-
+			$('.slider-frame').addClass('show');
+			loadSlide($('.slider'));
+			$('.btn-ok').addClass('btn-sf');
 		},
 		finishFrame:function(f,p){
 			console.log('finishFrame');
 			//console.log();
 			//the value is 0,1,2,3
 			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
-				var curImg = $('.slider li').eq(frameNum).html();
+				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
 			console.log(curImg);
-			$('.upload-img .frameimg').append(curImg);
-			$('.slider-frame').hide();
-			$('.btn-ok').addClass('mergePhoto');
+
+			fabric.Image.fromURL(curImg,function(imgobj){
+				imgobj.scale(0.5);
+				canvas.add(imgobj);
+			});
+
+			//$('.upload-img .frameimg').append(curImg);
+			$('.slider-frame').removeClass('show');
+			$('.btn-ok').addClass('mergePhoto').removeClass('btn-sf');
 			$('.slide-words').addClass('show');
 			$('.title-frame').addClass('hide');
 			loadSlide($('.words-list'));
@@ -66,14 +93,20 @@ jQuery(document).ready(function($){
 			//$('.selected-words').html(selectedWords);
 			//$('.slide-words').removeClass('show');
 			//
+			console.log(selectedWords);
+			var alignedRightText = new fabric.Text(selectedWords, {
+				textAlign: 'center'
+			});
+			canvas.add(alignedRightText);
+
+			var renderPic = canvas.toDataURL('png');
+
 			$.ajax({
 				url:'/api/createImg',
 				type:'POST',
 				dataType:'json',
 				data:{
-					image:p,
-					border:f,
-					text:selectedWords
+					image:p
 				},
 				success:function(result){
 					console.log(result);
@@ -122,17 +155,20 @@ jQuery(document).ready(function($){
 	$('.page-3 .btn-ok').on('click', function(){
 	//	finish frame, start select words
 
+
 		if($(this).hasClass('mergePhoto')){
 			photo.renderPhoto(frameNum,uploadImgSrc);
-		}else{
+		}else if($(this).hasClass('btn-sf')){
 			photo.finishFrame();
+		}else{
+			photo.selectFrame();
 		}
 	});
 
 	//start
 
 	//go to page3
-	gotoPage(0);
+	gotoPage(1);
 	photo.initPhoto();
 	//test first
 	//loadSlide($('.words-list'));
@@ -140,4 +176,8 @@ jQuery(document).ready(function($){
 
 
 
+
+
+
 });
+

@@ -265,6 +265,7 @@ img{width: 100%;}
     }
   }
   .slider-frame{
+    display: none;
     position: absolute;
     @include size(6.4rem,6.4rem);
     top: 0;

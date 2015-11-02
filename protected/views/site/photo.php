@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/fabric.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/photo.js"></script>
 <div class="wrapper">
     <!--For the introduction page-->
@@ -24,9 +25,12 @@
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-0.png" alt=""/>
             <input type="file" class="upload-photo"/>
         </div>
+        <!--canvas-->
+
         <div class="photo-frame show">
             <div class="upload-img">
                 <div class="previewimg">
+                    <canvas id="c"></canvas>
                     <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/photo-sample.jpg" alt=""/>-->
                 </div>
                 <div class="frameimg">

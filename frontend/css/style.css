@@ -377,6 +377,7 @@ img {
   text-align: center;
 }
 .photo-frame .slider-frame {
+  display: none;
   position: absolute;
   width: 6.4rem;
   height: 6.4rem;
