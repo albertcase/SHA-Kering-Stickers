@@ -59,18 +59,26 @@ jQuery(document).ready(function($){
 			}
 		},
 		selectFrame:function(f,p){
+			$('.slider-frame').addClass('show');
 			loadSlide($('.slider'));
+			$('.btn-ok').addClass('btn-sf');
 		},
 		finishFrame:function(f,p){
 			console.log('finishFrame');
 			//console.log();
 			//the value is 0,1,2,3
 			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
-				var curImg = $('.slider li').eq(frameNum).html();
+				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
 			console.log(curImg);
-			$('.upload-img .frameimg').append(curImg);
-			$('.slider-frame').hide();
-			$('.btn-ok').addClass('mergePhoto');
+
+			fabric.Image.fromURL(curImg,function(imgobj){
+				imgobj.scale(0.5);
+				canvas.add(imgobj);
+			});
+
+			//$('.upload-img .frameimg').append(curImg);
+			$('.slider-frame').removeClass('show');
+			$('.btn-ok').addClass('mergePhoto').removeClass('btn-sf');
 			$('.slide-words').addClass('show');
 			$('.title-frame').addClass('hide');
 			loadSlide($('.words-list'));
@@ -85,14 +93,20 @@ jQuery(document).ready(function($){
 			//$('.selected-words').html(selectedWords);
 			//$('.slide-words').removeClass('show');
 			//
+			console.log(selectedWords);
+			var alignedRightText = new fabric.Text(selectedWords, {
+				textAlign: 'center'
+			});
+			canvas.add(alignedRightText);
+
+			var renderPic = canvas.toDataURL('png');
+
 			$.ajax({
 				url:'/api/createImg',
 				type:'POST',
 				dataType:'json',
 				data:{
-					image:p,
-					border:f,
-					text:selectedWords
+					image:p
 				},
 				success:function(result){
 					console.log(result);
@@ -141,11 +155,13 @@ jQuery(document).ready(function($){
 	$('.page-3 .btn-ok').on('click', function(){
 	//	finish frame, start select words
 
-		photo.selectFrame();
+
 		if($(this).hasClass('mergePhoto')){
 			photo.renderPhoto(frameNum,uploadImgSrc);
-		}else{
+		}else if($(this).hasClass('btn-sf')){
 			photo.finishFrame();
+		}else{
+			photo.selectFrame();
 		}
 	});
 
