@@ -225,9 +225,10 @@ img{width: 100%;}
   .upload-photo{
     position: absolute;
     left: 0;
-    top: -1rem;
-    @include size(6.3rem,7.3rem);
+    top:0rem;
+    @include size(6.3rem,6.3rem);
     z-index: 2;
+    opacity: 0;
   }
 }
 .photo-frame{
@@ -494,4 +495,9 @@ img{width: 100%;}
   @include size(100%,3rem);
   background: url("../../images/theme-kr/shadow-overlay.png");
   background-size: 100% 100%;
+}
+
+#c{
+  box-sizing: border-box;
+  background: #fff;
 }
