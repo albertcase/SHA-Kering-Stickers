@@ -11,60 +11,9 @@
         感谢以下白丝带天使的支持
     </h3>
     <ul class="gallery-list">
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
-        <li>
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>
-        </li>
+        <!--<li>-->
+            <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>-->
+        <!--</li>-->
     </ul>
     <div class="button-share">
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/share-btn.png" alt=""/>

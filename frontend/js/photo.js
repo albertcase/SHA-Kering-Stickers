@@ -103,7 +103,7 @@ jQuery(document).ready(function($){
 				type:'POST',
 				dataType:'json',
 				data:{
-					image:p
+					image:renderPic
 				},
 				success:function(result){
 					console.log(result);
