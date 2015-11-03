@@ -9,8 +9,22 @@ class ApiController extends Controller
 			echo json_encode(array('code' => 2, 'msg' => '密码错误'));
 			Yii::app()->end();
 		}
-		$_SESSION['user_check'] = 1;
+		//$_SESSION['user_check'] = 1;
 		echo json_encode(array('code' => 1, 'msg' => '验证通过'));
+		Yii::app()->end();
+	}
+
+	public function actionLogin()
+	{
+		$_SESSION['weixin_info_id'] = 1;
+		echo json_encode(array('code' => 1, 'msg' => '已登录'));
+		Yii::app()->end();
+	}
+
+	public function actionLogout()
+	{
+		unset($_SESSION['weixin_info_id']);
+		echo json_encode(array('code' => 1, 'msg' => '已退出登录'));
 		Yii::app()->end();
 	}
 
@@ -56,13 +70,13 @@ class ApiController extends Controller
 	public function actionImagelist()
 	{
 		$db = Yii::app()->db;
-		$sql = "select a.*,b.nickname,b.headimgurl from same_image a,same_weixin_info b where a.weixin_id=b.id";
+		$sql = "select * from same_image";
 		$result = $db->createCommand($sql)->select()->queryAll();
-		Yii::import('ext.emoji.emoji', true);
-		for ($i = 0; $i < count($result); $i++) {
-			$name = json_decode($result[$i]['nickname'], true);
-			$result[$i]['nickname'] = emoji_unified_to_html($name['name']);
-		}
+		// Yii::import('ext.emoji.emoji', true);
+		// for ($i = 0; $i < count($result); $i++) {
+		// 	$name = json_decode($result[$i]['nickname'], true);
+		// 	$result[$i]['nickname'] = emoji_unified_to_html($name['name']);
+		// }
 		echo json_encode(array('code' => 1, 'msg' => $result));
 		Yii::app()->end();
 	}

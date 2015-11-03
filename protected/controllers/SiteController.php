@@ -18,10 +18,18 @@ class SiteController extends Controller
 	}
 
 	public function actionPhoto(){
+		if (!isset($_SESSION['weixin_info_id'])) {
+			Header("Location:/weixin/oauth?callback=/site/photo");
+			Yii::app()->end();
+		}
 		$this->render('photo');
 	}
 
 	public function actionFounder(){
+		if (!isset($_SESSION['weixin_info_id'])) {
+			Header("Location:/weixin/oauth?callback=/site/founder");
+			Yii::app()->end();
+		}
 		$this->render('founder');
 	}
 
