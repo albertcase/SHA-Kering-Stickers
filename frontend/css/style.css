@@ -335,10 +335,11 @@ img {
 .camera-block .upload-photo {
   position: absolute;
   left: 0;
-  top: -1rem;
+  top: 0rem;
   width: 6.3rem;
-  height: 7.3rem;
+  height: 6.3rem;
   z-index: 2;
+  opacity: 0;
 }
 
 .photo-frame {
@@ -356,7 +357,6 @@ img {
   z-index: 1;
   width: 6.4rem;
   height: 6.4rem;
-  overflow: hidden;
 }
 .photo-frame .upload-img .previewimg {
   position: relative;

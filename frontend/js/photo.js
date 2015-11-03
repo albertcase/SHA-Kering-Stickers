@@ -31,32 +31,16 @@ jQuery(document).ready(function($){
 			$('.btn-ok').addClass('hide');
 			//$('.upload-img .previewimg').html('');
 		},
-		uploadPhoto:function(){
-			var reader  = new FileReader(),
-				file    = $('.upload-photo')[0].files[0],
-				preview = $('.upload-img .previewimg');
-			previewimg = $('.upload-img .previewimg img')[0];
-			reader.onloadend = function () {
-				//preview.html('<img src="'+reader.result+'">');
-				$('.camera-block').removeClass('show');
-				$('.photo-frame').addClass('show');
-				//
-				$('.btn-ok').removeClass('hide');
-				uploadImgSrc = reader.result;
+		uploadPhoto:function(rst){
+			console.log(rst);
+			fabric.Image.fromURL(rst,function(imgobj){
+				canvas.add(imgobj);
+			});
+			$('.camera-block').removeClass('show');
+			$('.photo-frame').addClass('show');
+			//
+			$('.btn-ok').removeClass('hide');
 
-				fabric.Image.fromURL(uploadImgSrc,function(imgobj){
-					imgobj.scale(0.5);
-					canvas.add(imgobj);
-				});
-
-
-				step=1;
-			};
-			if (file) {
-				reader.readAsDataURL(file);
-			} else {
-				preview.find('img').attr('src','');
-			}
 		},
 		selectFrame:function(f,p){
 			$('.slider-frame').addClass('show');
@@ -129,8 +113,28 @@ jQuery(document).ready(function($){
 
 	//upload image and catch the file
 	$('.upload-photo').on('change', function(e){
-		photo.uploadPhoto();
+
+		//photo.uploadPhoto(e);
+		upload(e.target);
 	});
+
+	function upload (ele) {
+		lrz(ele.files[0],{quality:1})
+			.then(function (rst) {
+				// 处理成功会执行
+				console.log(rst);
+				photo.uploadPhoto(rst.base64);
+				$('.previewimg').append('<img src="'+rst.base64+'">');
+
+			})
+			.catch(function (err) {
+				// 处理失败会执行
+			})
+			.always(function () {
+				// 不管是成功失败，都会执行
+			});
+	};
+
 
 	$('.page-3 .btn-back').on('click', function(){
 		if($('.camera-block').hasClass('show')){
