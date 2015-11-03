@@ -70,15 +70,21 @@ class ApiController extends Controller
 
 	public function actionImagelist()
 	{
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$row = isset($_POST['row']) ? intval($_POST['row']) : 30;
+		$pageIndex = ($page - 1) * $row;
 		$db = Yii::app()->db;
-		$sql = "select * from same_image";
+		$totalSql = "select count(*) from same_image";
+		$total = $db->createCommand($totalSql)->select()->queryScalar();
+		$totalpage = ceil($total/$row);
+		$sql = "select * from same_image limit $pageIndex,$row";
 		$result = $db->createCommand($sql)->select()->queryAll();
 		// Yii::import('ext.emoji.emoji', true);
 		// for ($i = 0; $i < count($result); $i++) {
 		// 	$name = json_decode($result[$i]['nickname'], true);
 		// 	$result[$i]['nickname'] = emoji_unified_to_html($name['name']);
 		// }
-		echo json_encode(array('code' => 1, 'msg' => $result));
+		echo json_encode(array('code' => 1, 'msg' => $result, 'totalpage' => $totalpage, 'nowIndex' => $page, 'total' => $total));
 		Yii::app()->end();
 	}
 
