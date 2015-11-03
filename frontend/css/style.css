@@ -357,6 +357,7 @@ img {
   z-index: 1;
   width: 6.4rem;
   height: 6.4rem;
+  overflow: hidden;
 }
 .photo-frame .upload-img .previewimg {
   position: relative;
@@ -617,4 +618,9 @@ img {
   height: 3rem;
   background: url("../../images/theme-kr/shadow-overlay.png");
   background-size: 100% 100%;
+}
+
+#c {
+  box-sizing: border-box;
+  background: #fff;
 }

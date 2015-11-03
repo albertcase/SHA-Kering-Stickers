@@ -10,6 +10,9 @@ jQuery(document).ready(function($){
 
 	});
 
+	function toFixed2 (num) {
+		return parseFloat(+num.toFixed(2));
+	}
 
 	//step is represent the upload sequece
 	var step= 0,
@@ -31,15 +34,26 @@ jQuery(document).ready(function($){
 			$('.btn-ok').addClass('hide');
 			//$('.upload-img .previewimg').html('');
 		},
-		uploadPhoto:function(rst){
-			console.log(rst);
-			fabric.Image.fromURL(rst,function(imgobj){
-				canvas.add(imgobj);
-			});
-			$('.camera-block').removeClass('show');
-			$('.photo-frame').addClass('show');
-			//
-			$('.btn-ok').removeClass('hide');
+		uploadPhoto:function(ele,canvaswidth){
+
+			lrz(ele.files[0],{width:canvaswidth},{quality:1})
+				.then(function (rst) {
+					// 处理成功会执行
+					fabric.Image.fromURL(rst.base64,function(imgobj){
+						canvas.add(imgobj);
+					});
+					$('.camera-block').removeClass('show');
+					$('.photo-frame').addClass('show');
+					//
+					$('.btn-ok').removeClass('hide');
+
+				})
+				.catch(function (err) {
+					// 处理失败会执行
+				})
+				.always(function () {
+					// 不管是成功失败，都会执行
+				});
 
 		},
 		selectFrame:function(f,p){
@@ -53,7 +67,6 @@ jQuery(document).ready(function($){
 			//the value is 0,1,2,3
 			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
 				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
-			console.log(curImg);
 
 			fabric.Image.fromURL(curImg,function(imgobj){
 				imgobj.scale(0.5);
@@ -114,27 +127,10 @@ jQuery(document).ready(function($){
 	//upload image and catch the file
 	$('.upload-photo').on('change', function(e){
 
-		//photo.uploadPhoto(e);
-		upload(e.target);
+		var canvaswidth = $('#c').width();
+		photo.uploadPhoto(e.target,canvaswidth);
+
 	});
-
-	function upload (ele) {
-		lrz(ele.files[0],{quality:1})
-			.then(function (rst) {
-				// 处理成功会执行
-				console.log(rst);
-				photo.uploadPhoto(rst.base64);
-				$('.previewimg').append('<img src="'+rst.base64+'">');
-
-			})
-			.catch(function (err) {
-				// 处理失败会执行
-			})
-			.always(function () {
-				// 不管是成功失败，都会执行
-			});
-	};
-
 
 	$('.page-3 .btn-back').on('click', function(){
 		if($('.camera-block').hasClass('show')){
