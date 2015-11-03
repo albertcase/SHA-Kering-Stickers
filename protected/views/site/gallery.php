@@ -21,6 +21,14 @@
     <div class="shadow-overlay">
 
     </div>
+
+    <!-- the big image-->
+    <div class="showbigimg">
+        <div class="pic">
+        </div>
+        <div class="overlay"></div>
+        <div class="close-btn"></div>
+    </div>
 </div>
 
 

@@ -32,7 +32,8 @@ jQuery(document).ready(function($){
 			$('.camera-block').addClass('show');
 			$('.photo-frame').removeClass('show');
 			$('.btn-ok').addClass('hide');
-			//$('.upload-img .previewimg').html('');
+			//$('.upload-img .previewimg').html('<canvas>');
+			canvas.clear();
 		},
 		uploadPhoto:function(ele,canvaswidth){
 
@@ -83,8 +84,7 @@ jQuery(document).ready(function($){
 		selectWords:function(w){
 
 		},
-		renderPhoto:function(f,p){
-			console.log(f);
+		renderPhoto:function(){
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			//$('.selected-words').html(selectedWords);
@@ -92,12 +92,16 @@ jQuery(document).ready(function($){
 			//
 			console.log(selectedWords);
 			var alignedRightText = new fabric.Text(selectedWords, {
-				textAlign: 'center'
+				left:0,
+				top:0.82 * $('#c').height(),
+				textAlign: 'center',
+				fontSize: 14
 			});
+			alignedRightText.setColor('#8c8c8c');
 			canvas.add(alignedRightText);
-
 			var renderPic = canvas.toDataURL('png');
-
+			//hide the button
+			$('.btn-ok').addClass('hide');
 			$.ajax({
 				url:'/api/createImg',
 				type:'POST',
@@ -110,11 +114,12 @@ jQuery(document).ready(function($){
 					if(result.code==1){
 					//	success
 						$('.p4-photo').html('<img src="'+window.location.origin+'/'+result.msg+'">');
+						gotoPage(2);
+						//show the button
+						$('.btn-ok').removeClass('hide');
 					}
-
-					gotoPage(2);
 				}
-			})
+			});
 		}
 	};
 
@@ -129,7 +134,8 @@ jQuery(document).ready(function($){
 
 		var canvaswidth = $('#c').width();
 		photo.uploadPhoto(e.target,canvaswidth);
-
+		//reset the input file to active change event every time
+		$(this).val("");
 	});
 
 	$('.page-3 .btn-back').on('click', function(){
@@ -157,7 +163,7 @@ jQuery(document).ready(function($){
 
 
 		if($(this).hasClass('mergePhoto')){
-			photo.renderPhoto(frameNum,uploadImgSrc);
+			photo.renderPhoto();
 		}else if($(this).hasClass('btn-sf')){
 			photo.finishFrame();
 		}else{

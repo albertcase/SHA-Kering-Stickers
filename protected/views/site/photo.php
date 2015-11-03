@@ -56,11 +56,17 @@
                 </ul>
             </div>
             <div class="slide-words">
+                <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>Breaking the silence not lives I support #BeHerVoice#</li>
-                    <li>Together, let’s raise our voice against
-                        violence #BeHerVoice#</li>
-                    <li>I support the White Ribbon  for Women campaign #BeHerVoice#</li>
+                    <li>                Breaking the silence not lives I support
+                        #BeHerVoice#
+                    </li>
+                    <li>                Together, let’s raise our voice against
+                        violence #BeHerVoice#
+                    </li>
+                    <li>                I support the White Ribbon  for Women
+                        campaign #BeHerVoice#
+                    </li>
                 </ul>
             </div>
             <h4 class="title-frame">给勇敢美丽的你挑选一个相框</h4>

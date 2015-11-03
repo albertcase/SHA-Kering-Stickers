@@ -624,3 +624,67 @@ img {
   box-sizing: border-box;
   background: #fff;
 }
+
+.showbigimg {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+.showbigimg .pic {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: 6rem;
+  height: 6rem;
+  margin-left: -3rem;
+  margin-top: -3rem;
+}
+.showbigimg .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.showbigimg .close-btn {
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  margin-top: -3.4rem;
+  margin-left: 2.6rem;
+}
+.showbigimg .close-btn:before, .showbigimg .close-btn:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 0.4rem;
+  height: 0.04rem;
+}
+.showbigimg .close-btn:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #d8d6d8;
+}
+.showbigimg .close-btn:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background: #d8d6d8;
+}

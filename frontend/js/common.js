@@ -28,4 +28,17 @@ jQuery(document).ready(function($){
 		})
 	}
 
+	$('.gallery-list').on('click', 'li', function(){
+		$('.showbigimg .pic').html($(this).html());
+		$('.showbigimg').addClass('show');
+	});
+
+	$('.showbigimg .close-btn').on('click', function(){
+		$('.showbigimg').removeClass('show');
+	});
+
+	$('.showbigimg .overlay').on('click', function(){
+		$('.showbigimg').removeClass('show');
+	});
+
 });
