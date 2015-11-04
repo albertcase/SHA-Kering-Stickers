@@ -6,18 +6,12 @@ jQuery(document).ready(function($){
 	canvas.setWidth($('.upload-img').width());
 	canvas.setHeight($('.upload-img').height());
 
-	//canvas.on('mouse:move', function(e) {
-    //
-	//});
-
 	function toFixed2 (num) {
 		return parseFloat(+num.toFixed(2));
 	}
 
 	//step is represent the upload sequece
-	var step= 0,
-		uploadImgSrc,
-		frameNum;
+	var frameNum;
 
 	//Apply bxSlider function
 	function loadSlide(element){
@@ -64,8 +58,6 @@ jQuery(document).ready(function($){
 			$('.btn-ok').addClass('btn-sf');
 		},
 		finishFrame:function(f,p){
-			console.log('finishFrame');
-			//console.log();
 			//the value is 0,1,2,3
 			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
 				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
@@ -112,7 +104,6 @@ jQuery(document).ready(function($){
 					image:renderPic
 				},
 				success:function(result){
-					console.log(result);
 					if(result.code==1){
 					//	success
 						$('.p4-photo').html('<img src="'+window.location.origin+'/'+result.msg+'">');
@@ -179,8 +170,6 @@ jQuery(document).ready(function($){
 
 
 	//start
-	//go to page
-	//photo.initPhoto();
 	gotoPage(0);
 
 

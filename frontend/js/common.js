@@ -41,7 +41,6 @@ jQuery(document).ready(function($){
 				page:pageindex
 			},
 			success:function(result){
-				console.log(result);
 				if(result.code==1){
 					if(pageindex==1){
 						totalpage=result.totalpage;
