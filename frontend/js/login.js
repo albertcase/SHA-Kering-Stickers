@@ -11,7 +11,7 @@ jQuery(document).ready(function($){
 			data:{password:$('.user-pwd').val()},
 			success:function(result){
 				if(result.code==1){
-					window.location.href = 'photo';
+					window.location.href = '/site/photo';
 				}else{
 					alert('wrong');
 				}

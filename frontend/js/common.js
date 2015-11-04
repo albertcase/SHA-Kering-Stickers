@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
 		showLoading:function(){
 			if(!$('.ajax-loading').length){
 				$('body').append('<div class="ajax-loading">'+
-					'<div class="loading">loading...</div>'+ '</div>');
+					'<div class="loading"><span class="icon-loading"></span>loading...</div>'+ '</div>');
 			}
 		},
 		hideLoading:function(){

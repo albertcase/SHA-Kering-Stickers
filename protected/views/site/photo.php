@@ -9,9 +9,8 @@
         <div class="p2-1">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/p2-1.png" alt=""/>
         </div>
-        <p class="p2-des">我们诚意邀请您们通过白丝带女性权益活动，<br>
-            把#BeHerVoice的信息传扬出去。 <br>
-            <!--获得Stella McCartney Falabella时尚包袋-->
+        <p class="p2-des">我们诚意邀请您通过白丝带女性权益活动，<br>
+            把#BeHerVoice#的信息传扬出去。 <br>
         </p>
         <div class="p2-product">
             <div class="pp-1 pp"></div>
@@ -90,7 +89,7 @@
         <div class="p4-photo"></div>
         <div class="p4-2">
             感谢您的支持！<br>
-            立刻将它转发到您的朋友圈，即可参与#BeHerVoice抽奖活动，<br>
+            立刻将它转发到您的朋友圈，即可参与#BeHerVoice#抽奖活动，<br>
             赢取丝黛拉•麦卡妮（Stella McCartney）时尚包袋。<br>
             获奖名单将于11月26日公布，请大家密切关注！<br>
         </div>

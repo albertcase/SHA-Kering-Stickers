@@ -41,7 +41,12 @@ jQuery(document).ready(function($){
 				.then(function (rst) {
 					// 处理成功会执行
 					fabric.Image.fromURL(rst.base64,function(imgobj){
-						canvas.add(imgobj);
+						imgobj.set({
+							clipTo: function (ctx) {
+								ctx.arc(0, 0, 300, 0, Math.PI * 2, true);
+							}
+						});
+						canvas.add(imgobj).setActiveObject(imgobj);
 					});
 					$('.camera-block').removeClass('show');
 					$('.photo-frame').addClass('show');
@@ -179,8 +184,8 @@ jQuery(document).ready(function($){
 
 	//start
 	//go to page
-	photo.initPhoto();
-	gotoPage(1);
+	//photo.initPhoto();
+	gotoPage(0);
 
 
 
