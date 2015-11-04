@@ -37,11 +37,12 @@ jQuery(document).ready(function($){
 		},
 		uploadPhoto:function(ele,canvaswidth){
 
-			lrz(ele.files[0],{width:canvaswidth*1.2},{quality:1})
+			lrz(ele.files[0],{width:canvaswidth*2.2},{quality:1})
 				.then(function (rst) {
 					// 处理成功会执行
 					fabric.Image.fromURL(rst.base64,function(imgobj){
-						canvas.add(imgobj).setActiveObject(imgobj);
+						imgobj.scale(0.5);
+						canvas.add(imgobj);
 					});
 					$('.camera-block').removeClass('show');
 					$('.photo-frame').addClass('show');
