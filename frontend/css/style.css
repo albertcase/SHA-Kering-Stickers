@@ -320,6 +320,12 @@ img {
   display: none !important;
 }
 
+.page-3 {
+  background: url("../../images/theme-kr/bg-photo.png") no-repeat;
+  background-size: 100%;
+  background-position: 0rem 2.8rem;
+}
+
 .camera-block {
   display: none;
   position: relative;
