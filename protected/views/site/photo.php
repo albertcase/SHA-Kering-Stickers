@@ -60,14 +60,20 @@
             <div class="slide-words">
                 <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>                Breaking the silence not lives I support
-                        #BeHerVoice#
+                    <li>            I support the WHITE RIBBON FOR WOMEN
+                        campaign #BeHerVoice#
                     </li>
-                    <li>                Together, let’s raise our voice against
+                    <li>            Together, let’s raise our voice against
                         violence #BeHerVoice#
                     </li>
-                    <li>                I support the White Ribbon  for Women
-                        campaign #BeHerVoice#
+                    <li>            Breaking the silence not lives, I
+                        support #BeHerVoice#
+                    </li>
+                    <li>            赋权女性，支持#BeHerVoice#
+                    </li>
+                    <li>            反对暴力，为你发声#BeHerVoice#
+                    </li>
+                    <li>            打破沉默，支持#BeHerVoice#
                     </li>
                 </ul>
             </div>

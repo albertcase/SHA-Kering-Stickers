@@ -37,15 +37,10 @@ jQuery(document).ready(function($){
 		},
 		uploadPhoto:function(ele,canvaswidth){
 
-			lrz(ele.files[0],{width:canvaswidth},{quality:1})
+			lrz(ele.files[0],{width:canvaswidth*1.2},{quality:1})
 				.then(function (rst) {
 					// 处理成功会执行
 					fabric.Image.fromURL(rst.base64,function(imgobj){
-						imgobj.set({
-							clipTo: function (ctx) {
-								ctx.arc(0, 0, 300, 0, Math.PI * 2, true);
-							}
-						});
 						canvas.add(imgobj).setActiveObject(imgobj);
 					});
 					$('.camera-block').removeClass('show');
@@ -92,17 +87,13 @@ jQuery(document).ready(function($){
 		renderPhoto:function(){
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
-			//$('.selected-words').html(selectedWords);
-			//$('.slide-words').removeClass('show');
-			//
-			console.log(selectedWords);
 			var alignedRightText = new fabric.Text(selectedWords, {
 				left:0,
 				top:0.82 * $('#c').height(),
 				textAlign: 'center',
 				fontSize: 14
 			});
-			alignedRightText.setColor('#8c8c8c');
+			alignedRightText.setColor('#000');
 			canvas.add(alignedRightText);
 			var renderPic = canvas.toDataURL('png');
 			//hide the button
