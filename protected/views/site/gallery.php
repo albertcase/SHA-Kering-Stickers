@@ -8,11 +8,13 @@
     <h3>
         感谢以下白丝带天使的支持
     </h3>
-    <ul class="gallery-list">
-        <!--<li>-->
+    <div class="gallery-list-wrap">
+        <ul class="gallery-list">
+            <!--<li>-->
             <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/frame-2.png" alt=""/>-->
-        <!--</li>-->
-    </ul>
+            <!--</li>-->
+        </ul>
+    </div>
     <div class="button-share">
         <a href="index">为你发声，请领取您的白丝带徽章。</a>
     </div>

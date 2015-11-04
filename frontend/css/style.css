@@ -592,10 +592,13 @@ img {
   font-style: italic;
   text-decoration: underline;
 }
-.gallery-page .gallery-list {
-  margin-top: 0.4rem;
+.gallery-page .gallery-list-wrap {
   height: 6.6rem;
   overflow-y: auto;
+}
+.gallery-page .gallery-list {
+  margin-top: 0.4rem;
+  height: auto;
 }
 .gallery-page .gallery-list li {
   display: inline-block;

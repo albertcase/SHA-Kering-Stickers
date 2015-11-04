@@ -470,10 +470,13 @@ img{width: 100%;}
     font-style: italic;
     text-decoration: underline;
   }
-  .gallery-list{
-    margin-top: 0.4rem;
+  .gallery-list-wrap{
     height: 6.6rem;
     overflow-y: auto;
+  }
+  .gallery-list{
+    margin-top: 0.4rem;
+    height: auto;
     li{
       display: inline-block;
       @include size(2.2rem,2.2rem);

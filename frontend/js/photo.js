@@ -92,11 +92,15 @@ jQuery(document).ready(function($){
 				left:0,
 				top:0.82 * $('#c').height(),
 				textAlign: 'center',
-				fontSize: 14
+				fontSize: 28
 			});
+			alignedRightText.scale(0.5);
 			alignedRightText.setColor('#000');
 			canvas.add(alignedRightText);
-			var renderPic = canvas.toDataURL('png');
+			var renderPic = canvas.toDataURL({
+				format: 'jpeg',
+				quality: 1
+			});
 			//hide the button
 			$('.btn-ok').addClass('hide');
 			ajaxloading.showLoading();

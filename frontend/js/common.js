@@ -18,19 +18,35 @@ jQuery(document).ready(function($){
 		}
 	}
 
+	//for imagelist
+	var pageindex = 1,totalpage;
 	if($('.gallery-list').length){
+		getImageList(1);
+	}
+	$('.gallery-list-wrap').on('scroll', function(){
+		if($('.gallery-list').height() - $('.gallery-list-wrap').height()<=$(this).scrollTop() ){
+			if(pageindex>totalpage) return;
+			pageindex++;
+			getImageList(pageindex);
+		}
+	});
+
+	function getImageList(pageindex){
 		ajaxloading.showLoading();
 		$.ajax({
 			url:'/api/imagelist',
-			type:'GET',
+			type:'POST',
 			dataType:'json',
-			//data:{
-			//	image:renderPic
-			//},
+			data:{
+				page:pageindex
+			},
 			success:function(result){
 				console.log(result);
 				if(result.code==1){
-				//	success
+					if(pageindex==1){
+						totalpage=result.totalpage;
+					}
+					//	success
 					var imglist = '';
 					var listData = result.msg;
 					for(var i=0;i<listData.length;i++){
