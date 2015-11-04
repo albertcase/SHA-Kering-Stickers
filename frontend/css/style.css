@@ -607,6 +607,10 @@ img {
   left: 50%;
   margin-left: -2.8rem;
   bottom: 0.3rem;
+  background: url("../../images/theme-kr/share-btn.png");
+  background-size: 100%;
+  line-height: 0.8rem;
+  text-indent: 35px;
 }
 
 .shadow-overlay {
