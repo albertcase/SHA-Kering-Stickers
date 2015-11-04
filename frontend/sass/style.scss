@@ -490,6 +490,11 @@ img{width: 100%;}
   background-size: 100%;
   line-height: 0.8rem;
   text-indent: 35px;
+  a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 .shadow-overlay{
   position: absolute;

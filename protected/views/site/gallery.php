@@ -16,8 +16,7 @@
         <!--</li>-->
     </ul>
     <div class="button-share">
-        <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/share-btn.png" alt=""/>-->
-        为你发声，请领取您的白丝带徽章。
+        <a href="index">为你发声，请领取您的白丝带徽章。</a>
     </div>
     <div class="shadow-overlay">
 

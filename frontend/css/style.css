@@ -612,6 +612,11 @@ img {
   line-height: 0.8rem;
   text-indent: 35px;
 }
+.button-share a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
 
 .shadow-overlay {
   position: absolute;
