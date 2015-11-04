@@ -6,9 +6,9 @@ jQuery(document).ready(function($){
 	canvas.setWidth($('.upload-img').width());
 	canvas.setHeight($('.upload-img').height());
 
-	canvas.on('mouse:move', function(e) {
-
-	});
+	//canvas.on('mouse:move', function(e) {
+    //
+	//});
 
 	function toFixed2 (num) {
 		return parseFloat(+num.toFixed(2));
@@ -102,6 +102,7 @@ jQuery(document).ready(function($){
 			var renderPic = canvas.toDataURL('png');
 			//hide the button
 			$('.btn-ok').addClass('hide');
+			ajaxloading.showLoading();
 			$.ajax({
 				url:'/api/createImg',
 				type:'POST',
@@ -118,6 +119,7 @@ jQuery(document).ready(function($){
 						//show the button
 						$('.btn-ok').removeClass('hide');
 						wxshare();
+						ajaxloading.hideLoading();
 					}
 				}
 			});
@@ -127,6 +129,7 @@ jQuery(document).ready(function($){
 
 
 	$('.p2-product').on('click', function(){
+		photo.initPhoto();
 		gotoPage(1);
 	});
 
@@ -172,13 +175,12 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	//start
 
-	//go to page3
-	gotoPage(1);
+
+	//start
+	//go to page
 	photo.initPhoto();
-	//test first
-	//loadSlide($('.words-list'));
+	gotoPage(1);
 
 
 

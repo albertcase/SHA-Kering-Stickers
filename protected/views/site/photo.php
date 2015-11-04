@@ -113,4 +113,3 @@
 <div class="share-block">
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/share.png" alt=""/>
 </div>
-
