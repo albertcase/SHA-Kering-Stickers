@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 		initPhoto:function(){
 			$('.camera-block').addClass('show');
 			$('.photo-frame').removeClass('show');
-			$('.btn-ok').addClass('hide');
+			$('.btn-ok').addClass('hide').removeClass('mergePhoto');
 			//$('.upload-img .previewimg').html('<canvas>');
 			canvas.clear();
 		},
@@ -64,6 +64,9 @@ jQuery(document).ready(function($){
 
 			fabric.Image.fromURL(curImg,function(imgobj){
 				imgobj.scale(0.5);
+				//imgobj.set({
+				//	width:''
+				//})
 				canvas.add(imgobj);
 			});
 
