@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
                 wx.onMenuShareTimeline({
                     title: '制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#', // 分享标题
                     link: window.location.origin+'/site/gallery', // 分享链接
-                    imgUrl:window.location.origin+$('.p4-photo img').attr('src'), // 分享图标
+                    imgUrl: $('.p4-photo img').attr('src'), // 分享图标
                     success: function () {
                         // 用户确认分享后执行的回调函数
                     },
@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
                     title: '制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#', // 分享标题
                     desc: '制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#', // 分享描述
                     link: window.location.origin+'/site/gallery', // 分享链接
-                    imgUrl: window.location.origin+$('.p4-photo img').attr('src'), // 分享图标
+                    imgUrl: $('.p4-photo img').attr('src'), // 分享图标
                     type: '', // 分享类型,music、video或link，不填默认为link
                     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                     success: function () {
