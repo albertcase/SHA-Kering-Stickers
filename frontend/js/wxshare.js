@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 
-    window.wxshare = function(){
+    window.wxshare = function(shareimg){
         $.ajax({
             url:'/weixin/jssdk',
             type:'GET',
@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
             success:function(result){
                 var wxdata = result;
                 wx.config({
-                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                     appId: wxdata.appid, // 必填，公众号的唯一标识
                     timestamp: wxdata.time, // 必填，生成签名的时间戳
                     nonceStr: wxdata.noncestr, // 必填，生成签名的随机串
@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
                 wx.onMenuShareTimeline({
                     title: '制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#', // 分享标题
                     link: window.location.origin+'/site/gallery', // 分享链接
-                    imgUrl: $('.p4-photo img').attr('src'), // 分享图标
+                    imgUrl: shareimg, // 分享图标
                     success: function () {
                         // 用户确认分享后执行的回调函数
                     },
@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
                     title: '制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#', // 分享标题
                     desc: '制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#', // 分享描述
                     link: window.location.origin+'/site/gallery', // 分享链接
-                    imgUrl: $('.p4-photo img').attr('src'), // 分享图标
+                    imgUrl: shareimg, // 分享图标
                     type: '', // 分享类型,music、video或link，不填默认为link
                     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                     success: function () {

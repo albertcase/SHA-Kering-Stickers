@@ -113,7 +113,8 @@ jQuery(document).ready(function($){
 						gotoPage(2);
 						//show the button
 						$('.btn-ok').removeClass('hide');
-						wxshare();
+						var shareimg = window.location.origin+'/'+result.msg;
+						wxshare(shareimg);
 						ajaxloading.hideLoading();
 					}
 				}
