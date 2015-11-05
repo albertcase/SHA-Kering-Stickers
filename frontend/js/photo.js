@@ -20,12 +20,14 @@ jQuery(document).ready(function($){
 		});
 	};
 
+	var step=0;
 	//photo
 	var photo = {
 		initPhoto:function(){
+			step=0;
 			$('.camera-block').addClass('show');
 			$('.photo-frame').removeClass('show');
-			$('.btn-ok').addClass('hide').removeClass('mergePhoto');
+			$('.btn-ok').addClass('hide');
 			$('.slide-words').removeClass('show');
 			//$('.upload-img .previewimg').html('<canvas>');
 			canvas.clear();
@@ -35,6 +37,7 @@ jQuery(document).ready(function($){
 			lrz(ele.files[0],{width:canvaswidth*2.2},{quality:1})
 				.then(function (rst) {
 					// 处理成功会执行
+					step=1;
 					fabric.Image.fromURL(rst.base64,function(imgobj){
 						imgobj.scale(0.5);
 						canvas.add(imgobj);
@@ -42,7 +45,6 @@ jQuery(document).ready(function($){
 					$('.camera-block').removeClass('show');
 					$('.photo-frame').addClass('show');
 					$('.btn-ok').removeClass('hide');
-
 				})
 				.catch(function (err) {
 					// 处理失败会执行
@@ -52,13 +54,22 @@ jQuery(document).ready(function($){
 				});
 
 		},
+		adjustPhoto:function(){
+			step=1;
+			$('.slider-frame').removeClass('show');
+		},
 		selectFrame:function(f,p){
+			step=2;
 			$('.slider-frame').addClass('show');
 			loadSlide($('.slider'));
-			$('.btn-ok').addClass('btn-sf');
+			$('.slide-words').removeClass('show');
+			if(canvas._objects.length>1){
+				canvas.remove(canvas._objects[1]);
+			}
 		},
 		finishFrame:function(f,p){
 			//the value is 0,1,2,3
+			step=3;
 			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
 				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
 
@@ -70,9 +81,7 @@ jQuery(document).ready(function($){
 				canvas.add(imgobj);
 			});
 
-			//$('.upload-img .frameimg').append(curImg);
 			$('.slider-frame').removeClass('show');
-			$('.btn-ok').addClass('mergePhoto').removeClass('btn-sf');
 			$('.slide-words').addClass('show');
 			loadSlide($('.words-list'));
 		},
@@ -80,6 +89,7 @@ jQuery(document).ready(function($){
 
 		},
 		renderPhoto:function(){
+			$('.slide-words').removeClass('show');
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			var alignedRightText = new fabric.Text(selectedWords, {
@@ -140,13 +150,6 @@ jQuery(document).ready(function($){
 		$(this).val("");
 	});
 
-	$('.page-3 .btn-back').on('click', function(){
-		if($('.camera-block').hasClass('show')){
-			gotoPage(0);
-		}else{
-			photo.initPhoto();
-		}
-	});
 
 	$('.btn-list').on('click', function(){
 		window.location.href = '/site/gallery';
@@ -160,16 +163,41 @@ jQuery(document).ready(function($){
 		$('.share-block').removeClass('show');
 	});
 
+	$('.page-3 .btn-back').on('click', function(){
+
+		switch (step){
+			case 0:
+				gotoPage(0);
+				break;
+			case 1:
+				photo.initPhoto();
+				break;
+			case 2:
+				photo.adjustPhoto();
+				break;
+			case 3:
+				photo.selectFrame();
+				break;
+		}
+
+	});
+
 	$('.page-3 .btn-ok').on('click', function(){
 	//	finish frame, start select words
 
-
-		if($(this).hasClass('mergePhoto')){
-			photo.renderPhoto();
-		}else if($(this).hasClass('btn-sf')){
-			photo.finishFrame();
-		}else{
-			photo.selectFrame();
+		switch (step){
+			case 0:
+				gotoPage(0);
+				break;
+			case 1:
+				photo.selectFrame();
+				break;
+			case 2:
+				photo.finishFrame();
+				break;
+			case 3:
+				photo.renderPhoto();
+				break;
 		}
 	});
 
@@ -177,8 +205,6 @@ jQuery(document).ready(function($){
 
 	//start
 	gotoPage(0);
-
-
 
 
 
