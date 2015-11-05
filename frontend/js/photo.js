@@ -143,7 +143,7 @@ jQuery(document).ready(function($){
 	});
 
 	$('.btn-list').on('click', function(){
-		window.location.href = 'gallery';
+		window.location.href = '/site/gallery';
 	});
 
 	$('.btn-share').on('click', function(){
