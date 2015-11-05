@@ -13,7 +13,7 @@ jQuery(document).ready(function($){
 				if(result.code==1){
 					window.location.href = '/site/photo';
 				}else{
-					alert('wrong');
+					alert('您的密码输入有误，请重新输入');
 				}
 			}
 		});
