@@ -7,9 +7,9 @@
         <div class="p2-1">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/p2-1.png" alt=""/>
         </div>
-        <p class="p2-des">我们诚邀您参与BeHerVoice公益活动<br>
-            所有传递爱心的支持者都将有机会参与抽奖<br>
-            获得Stella McCartney Falabella时尚包袋</p>
+        <p class="p2-des">我们诚意邀请您通过白丝带女性权益活动，<br>
+            把#BeHerVoice#的信息传扬出去。 <br>
+        </p>
         <div class="p2-product">
             <div class="pp-1 pp"></div>
             <div class="pp-2 pp">
@@ -56,11 +56,26 @@
                 </ul>
             </div>
             <div class="slide-words">
+                <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>Breaking the silence not lives I support #BeHerVoice#</li>
-                    <li>Together, let’s raise our voice against
-                        violence #BeHerVoice#</li>
-                    <li>I support the White Ribbon  for Women campaign #BeHerVoice#</li>
+                    <li>                I support the white ribbon for women
+            campaign #BeHerVoice#
+                    </li>
+                    <li>                Together, let’s raise our voice against
+            violence #BeHerVoice#
+                    </li>
+                    <li>                Breaking the silence not lives, I
+            support #BeHerVoice#
+                    </li>
+                    <li>
+                       赋权女性，支持#BeHerVoice#
+                    </li>
+                    <li>
+                  反对暴力，为你发声#BeHerVoice#
+                    </li>
+                    <li>
+                  打破沉默，支持#BeHerVoice#
+                    </li>
                 </ul>
             </div>
             <h4 class="title-frame">给勇敢美丽的你挑选一个相框</h4>
@@ -80,10 +95,10 @@
     <div class="page page-4">
         <div class="p4-photo"></div>
         <div class="p4-2">
-            感谢您的声援！点滴关爱，汇聚海洋。<br>
-            将您的支持转发到朋友圈，即可参与BeHerVoice抽奖活动，<br>
-            赢取Stella McCartney Falabella时尚包袋。<br>
-            我们的获奖名单将于11月26日公布，请大家持续关注！<br>
+            感谢您的支持！<br>
+            立刻将它转发到您的朋友圈，即可参与#BeHerVoice#抽奖活动，<br>
+            赢取丝黛拉•麦卡妮（Stella McCartney）时尚包袋。<br>
+            获奖名单将于11月26日公布，请大家密切关注！<br>
         </div>
         <div class="p3-buttons">
             <div class="btn-back btn-list">
@@ -104,4 +119,3 @@
 <div class="share-block">
     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/share.png" alt=""/>
 </div>
-

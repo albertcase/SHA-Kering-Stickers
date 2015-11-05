@@ -6,18 +6,12 @@ jQuery(document).ready(function($){
 	canvas.setWidth($('.upload-img').width());
 	canvas.setHeight($('.upload-img').height());
 
-	canvas.on('mouse:move', function(e) {
-
-	});
-
 	function toFixed2 (num) {
 		return parseFloat(+num.toFixed(2));
 	}
 
 	//step is represent the upload sequece
-	var step= 0,
-		uploadImgSrc,
-		frameNum;
+	var frameNum;
 
 	//Apply bxSlider function
 	function loadSlide(element){
@@ -31,15 +25,17 @@ jQuery(document).ready(function($){
 		initPhoto:function(){
 			$('.camera-block').addClass('show');
 			$('.photo-frame').removeClass('show');
-			$('.btn-ok').addClass('hide');
-			//$('.upload-img .previewimg').html('');
+			$('.btn-ok').addClass('hide').removeClass('mergePhoto');
+			//$('.upload-img .previewimg').html('<canvas>');
+			canvas.clear();
 		},
 		uploadPhoto:function(ele,canvaswidth){
 
-			lrz(ele.files[0],{width:canvaswidth},{quality:1})
+			lrz(ele.files[0],{width:canvaswidth*2.2},{quality:1})
 				.then(function (rst) {
 					// 处理成功会执行
 					fabric.Image.fromURL(rst.base64,function(imgobj){
+						imgobj.scale(0.5);
 						canvas.add(imgobj);
 					});
 					$('.camera-block').removeClass('show');
@@ -62,14 +58,15 @@ jQuery(document).ready(function($){
 			$('.btn-ok').addClass('btn-sf');
 		},
 		finishFrame:function(f,p){
-			console.log('finishFrame');
-			//console.log();
 			//the value is 0,1,2,3
 			frameNum = $('.slider-frame .bx-pager-link.active').parent().index()+1;
 				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
 
 			fabric.Image.fromURL(curImg,function(imgobj){
 				imgobj.scale(0.5);
+				//imgobj.set({
+				//	width:''
+				//})
 				canvas.add(imgobj);
 			});
 
@@ -83,44 +80,55 @@ jQuery(document).ready(function($){
 		selectWords:function(w){
 
 		},
-		renderPhoto:function(f,p){
-			console.log(f);
+		renderPhoto:function(){
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
-			//$('.selected-words').html(selectedWords);
-			//$('.slide-words').removeClass('show');
-			//
-			console.log(selectedWords);
 			var alignedRightText = new fabric.Text(selectedWords, {
-				textAlign: 'center'
+				left:0,
+				top:0.84 * $('#c').height(),
+				textAlign: 'center',
+				fontSize: 28
 			});
+			alignedRightText.scale(0.5);
+			alignedRightText.setColor('#000');
 			canvas.add(alignedRightText);
-
-			var renderPic = canvas.toDataURL('png');
-
+			var renderPic = canvas.toDataURL({
+				format: 'jpeg',
+				quality: 1
+			});
+			//hide the button
+			$('.btn-ok').addClass('hide');
+			ajaxloading.showLoading();
 			$.ajax({
 				url:'/api/createImg',
 				type:'POST',
 				dataType:'json',
 				data:{
-					image:p
+					image:renderPic
 				},
 				success:function(result){
-					console.log(result);
 					if(result.code==1){
 					//	success
 						$('.p4-photo').html('<img src="'+window.location.origin+'/'+result.msg+'">');
+						gotoPage(2);
+						//show the button
+						$('.btn-ok').removeClass('hide');
+						var shareimg = window.location.origin+'/'+result.msg,
+							sharetitle='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
+							sharedesc='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
+							sharelink=window.location.origin+'/site/gallery';
+						wxshare(sharetitle,shareimg,sharelink,sharedesc);
+						ajaxloading.hideLoading();
 					}
-
-					gotoPage(2);
 				}
-			})
+			});
 		}
 	};
 
 
 
 	$('.p2-product').on('click', function(){
+		photo.initPhoto();
 		gotoPage(1);
 	});
 
@@ -129,7 +137,8 @@ jQuery(document).ready(function($){
 
 		var canvaswidth = $('#c').width();
 		photo.uploadPhoto(e.target,canvaswidth);
-
+		//reset the input file to active change event every time
+		$(this).val("");
 	});
 
 	$('.page-3 .btn-back').on('click', function(){
@@ -141,7 +150,7 @@ jQuery(document).ready(function($){
 	});
 
 	$('.btn-list').on('click', function(){
-		window.location.href = 'gallery';
+		window.location.href = '/site/gallery';
 	});
 
 	$('.btn-share').on('click', function(){
@@ -157,7 +166,7 @@ jQuery(document).ready(function($){
 
 
 		if($(this).hasClass('mergePhoto')){
-			photo.renderPhoto(frameNum,uploadImgSrc);
+			photo.renderPhoto();
 		}else if($(this).hasClass('btn-sf')){
 			photo.finishFrame();
 		}else{
@@ -165,13 +174,10 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	//start
 
-	//go to page3
-	gotoPage(1);
-	photo.initPhoto();
-	//test first
-	//loadSlide($('.words-list'));
+
+	//start
+	gotoPage(0);
 
 
 
