@@ -82,7 +82,7 @@ jQuery(document).ready(function($){
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			var alignedRightText = new fabric.Text(selectedWords, {
 				left:0,
-				top:0.82 * $('#c').height(),
+				top:0.84 * $('#c').height(),
 				textAlign: 'center',
 				fontSize: 28
 			});
