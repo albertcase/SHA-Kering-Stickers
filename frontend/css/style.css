@@ -398,6 +398,9 @@ img {
   width: 80%;
   text-align: center;
   margin: 0.3rem auto;
+  color: #000;
+  margin-top: -1rem;
+  z-index: 10;
 }
 .photo-frame .slide-words .bx-wrapper .bx-controls-direction a:before {
   height: 0.08rem;
@@ -415,6 +418,11 @@ img {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+.photo-frame .slide-words .bx-controls-direction {
+  position: absolute;
+  bottom: -0.8rem;
+  width: 100%;
+}
 .photo-frame .slider li {
   position: absolute;
   left: 0;
@@ -422,7 +430,7 @@ img {
 .photo-frame .title-frame {
   font-size: 0.28rem;
   text-align: center;
-  margin-top: 0.3rem;
+  margin-top: 0.6rem;
   letter-spacing: 2px;
 }
 

@@ -26,6 +26,7 @@ jQuery(document).ready(function($){
 			$('.camera-block').addClass('show');
 			$('.photo-frame').removeClass('show');
 			$('.btn-ok').addClass('hide').removeClass('mergePhoto');
+			$('.slide-words').removeClass('show');
 			//$('.upload-img .previewimg').html('<canvas>');
 			canvas.clear();
 		},
@@ -40,7 +41,6 @@ jQuery(document).ready(function($){
 					});
 					$('.camera-block').removeClass('show');
 					$('.photo-frame').addClass('show');
-					//
 					$('.btn-ok').removeClass('hide');
 
 				})
@@ -64,9 +64,9 @@ jQuery(document).ready(function($){
 
 			fabric.Image.fromURL(curImg,function(imgobj){
 				imgobj.scale(0.5);
-				//imgobj.set({
-				//	width:''
-				//})
+				imgobj.set({
+					selectable:false
+				});
 				canvas.add(imgobj);
 			});
 
@@ -74,7 +74,6 @@ jQuery(document).ready(function($){
 			$('.slider-frame').removeClass('show');
 			$('.btn-ok').addClass('mergePhoto').removeClass('btn-sf');
 			$('.slide-words').addClass('show');
-			$('.title-frame').addClass('hide');
 			loadSlide($('.words-list'));
 		},
 		selectWords:function(w){
