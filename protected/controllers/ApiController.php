@@ -77,7 +77,7 @@ class ApiController extends Controller
 		$totalSql = "select count(*) from same_image";
 		$total = $db->createCommand($totalSql)->select()->queryScalar();
 		$totalpage = ceil($total/$row);
-		$sql = "select * from same_image limit $pageIndex,$row";
+		$sql = "select * from same_image order by id desc limit $pageIndex,$row";
 		$result = $db->createCommand($sql)->select()->queryAll();
 		// Yii::import('ext.emoji.emoji', true);
 		// for ($i = 0; $i < count($result); $i++) {
