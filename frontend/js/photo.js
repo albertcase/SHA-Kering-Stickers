@@ -113,8 +113,11 @@ jQuery(document).ready(function($){
 						gotoPage(2);
 						//show the button
 						$('.btn-ok').removeClass('hide');
-						var shareimg = window.location.origin+'/'+result.msg;
-						wxshare(shareimg);
+						var shareimg = window.location.origin+'/'+result.msg,
+							sharetitle='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
+							sharedesc='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
+							sharelink=window.location.origin+'/site/gallery';
+						wxshare(sharetitle,shareimg,sharelink,sharedesc);
 						ajaxloading.hideLoading();
 					}
 				}
