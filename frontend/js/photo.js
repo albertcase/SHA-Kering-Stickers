@@ -85,9 +85,6 @@ jQuery(document).ready(function($){
 			$('.slide-words').addClass('show');
 			loadSlide($('.words-list'));
 		},
-		selectWords:function(w){
-
-		},
 		renderPhoto:function(){
 			$('.slide-words').removeClass('show');
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;

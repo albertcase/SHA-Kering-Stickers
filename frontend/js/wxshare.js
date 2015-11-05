@@ -50,7 +50,7 @@ jQuery(document).ready(function(){
     var shareimg = window.location.origin+'/images/theme-kr/frame-0.png',
         sharetitle='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
         sharedesc='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
-        sharelink=window.location.origin+'/site/gallery';
+        sharelink=window.location.origin+'/site/index';
     wxshare(sharetitle,shareimg,sharelink,sharedesc);
 
 
