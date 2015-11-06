@@ -6,7 +6,7 @@
         把#BeHerVoice#的信息传扬出去。
     </p>
     <h3>
-        感谢以下白丝带天使的支持
+        感谢以下参与者的支持
     </h3>
     <div class="gallery-list-wrap">
         <ul class="gallery-list">

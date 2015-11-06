@@ -42,6 +42,7 @@ jQuery(document).ready(function($){
 						imgobj.scale(0.5);
 						canvas.add(imgobj);
 					});
+					$('.title-frame').addClass('hide');
 					$('.camera-block').removeClass('show');
 					$('.photo-frame').addClass('show');
 					$('.btn-ok').removeClass('hide');
@@ -57,10 +58,13 @@ jQuery(document).ready(function($){
 		adjustPhoto:function(){
 			step=1;
 			$('.slider-frame').removeClass('show');
+			$('.title-frame').addClass('hide');
 		},
 		selectFrame:function(f,p){
 			step=2;
+			$('.title-frame').removeClass('hide').html('给勇敢美丽的你挑选一个相框');
 			$('.slider-frame').addClass('show');
+			$('.btn-ok').html('确定');
 			loadSlide($('.slider'));
 			$('.slide-words').removeClass('show');
 			if(canvas._objects.length>1){
@@ -85,6 +89,8 @@ jQuery(document).ready(function($){
 			$('.slider-frame').removeClass('show');
 			$('.slide-words').addClass('show');
 			loadSlide($('.words-list'));
+			$('.title-frame').html('给您的照片”发声”');
+			$('.btn-ok').html('完成');
 		},
 		renderPhoto:function(){
 			$('.slide-words').removeClass('show');

@@ -9,6 +9,8 @@
         </div>
         <p class="p2-des">我们诚意邀请您通过白丝带女性权益活动，<br>
             把#BeHerVoice#的信息传扬出去。 <br>
+            请即参与比赛, 赢取丝黛拉•麦卡妮<br>
+            （Stella McCartney）时尚包袋！
         </p>
         <div class="p2-product">
             <div class="pp-1 pp"></div>
@@ -58,7 +60,7 @@
             <div class="slide-words">
                 <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>I support the white ribbon for women
+                    <li>I support the White Ribbon for women
 campaign #BeHerVoice#
                     </li>
                     <li>Together, let’s raise our voice against
@@ -95,7 +97,7 @@ support #BeHerVoice#
             感谢您的支持！<br>
             立刻将它转发到您的朋友圈，即可参与#BeHerVoice#抽奖活动，<br>
             赢取丝黛拉•麦卡妮（Stella McCartney）时尚包袋。<br>
-            获奖名单将于11月26日公布，请大家密切关注！<br>
+            获奖名单将于12月初公布，请大家密切关注！<br>
         </div>
         <div class="p3-buttons">
             <div class="btn-back btn-list">

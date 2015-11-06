@@ -10,7 +10,8 @@
         <div class="p1-activity">
             打破沉默，为您发声<br>
             <span>我们邀您晒出靓照</span><br>
-            赢取丝黛拉•麦卡妮（Stella McCartney）时尚包袋！
+            此项活动只限于开云集团和旗下品牌员工
+
         </div>
         <div class="user-vertify" name="user-vertify"  action="" method="post">
             <label for="password">
