@@ -5,6 +5,7 @@ jQuery(document).ready(function($){
 	var canvas = new fabric.Canvas('c');
 	canvas.setWidth($('.upload-img').width());
 	canvas.setHeight($('.upload-img').height());
+	canvas.setBackgroundColor('#fff');
 
 	function toFixed2 (num) {
 		return parseFloat(+num.toFixed(2));
@@ -65,6 +66,7 @@ jQuery(document).ready(function($){
 			$('.title-frame').addClass('hide');
 		},
 		selectFrame:function(f,p){
+			console.log(canvas);
 			step=2;
 			$('.title-frame').removeClass('hide').html('给勇敢美丽的你挑选一个相框');
 			$('.slider-frame').addClass('show');
@@ -115,7 +117,7 @@ jQuery(document).ready(function($){
 			alignedRightText.setColor('#000');
 			alignedRightText.set({
 				left:$('#c').width()/2 - alignedRightText.width/2,
-				top:$('#c').height() - alignedRightText.height-5
+				top:$('#c').height() - alignedRightText.height
 			});
 			canvas.add(alignedRightText);
 			var renderPic = canvas.toDataURL({
