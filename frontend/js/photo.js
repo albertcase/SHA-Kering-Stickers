@@ -74,8 +74,9 @@ jQuery(document).ready(function($){
 				var curImg = $('.slider li').eq(frameNum).find('img').attr('src');
 
 			fabric.Image.fromURL(curImg,function(imgobj){
-				imgobj.scale(0.5);
 				imgobj.set({
+					width:$('#c').width(),
+					height:$('#c').height(),
 					selectable:false
 				});
 				canvas.add(imgobj);
