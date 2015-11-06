@@ -63,15 +63,15 @@
                     <li>I support the White Ribbon for women
 campaign #BeHerVoice#
                     </li>
+                    <li>        赋权女性，支持#BeHerVoice#
+                    </li>
                     <li>Together, let’s raise our voice against
 violence #BeHerVoice#
                     </li>
+                    <li>        反对暴力，为你发声#BeHerVoice#
+                    </li>
                     <li>Breaking the silence not lives, I
 support #BeHerVoice#
-                    </li>
-                    <li>        赋权女性，支持#BeHerVoice#
-                    </li>
-                    <li>        反对暴力，为你发声#BeHerVoice#
                     </li>
                     <li>        打破沉默，支持#BeHerVoice#
                     </li>
