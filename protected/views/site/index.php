@@ -10,7 +10,7 @@
         <div class="p1-activity">
             打破沉默，为您发声<br>
             <span>我们邀您晒出靓照</span><br>
-            此项活动只限于开云集团和旗下品牌员工
+
 
         </div>
         <div class="user-vertify" name="user-vertify"  action="" method="post">
@@ -22,7 +22,7 @@
                 <span class="icon"></span>
                 <input type="button" class="user-submit" value="确认"/>
             </div>
-
+            <p class="p1-des-2">(此项活动只限于开云集团和旗下品牌员工)</p>
         </div>
     </div>
 

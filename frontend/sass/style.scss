@@ -60,6 +60,10 @@ img{width: 100%;}
   }
   .user-vertify{
     margin-top: 0.2rem;
+    .p1-des-2{
+      margin-top: 0.4rem;
+      font-size: 0.24rem;
+    }
     label{
       font-size: 0.42rem;
       display: block;
@@ -294,6 +298,7 @@ img{width: 100%;}
     li{
       font-size: 14px;
       display: block;
+      font-family:'Arial';
     }
     .bx-wrapper .bx-controls-direction a{
       &:before{
@@ -487,7 +492,7 @@ img{width: 100%;}
     text-decoration: underline;
   }
   .gallery-list-wrap{
-    height: 6.6rem;
+    height: 8.6rem;
     overflow-y: auto;
     margin-top: 0.4rem;
   }
@@ -525,7 +530,7 @@ img{width: 100%;}
   bottom: 0;
   left: 0;
   z-index: 2;
-  @include size(100%,3rem);
+  @include size(100%,1rem);
   background: url("../../images/theme-kr/shadow-overlay.png");
   background-size: 100% 100%;
 }

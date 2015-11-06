@@ -109,8 +109,8 @@ jQuery(document).ready(function($){
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			var alignedRightText = new fabric.Text(selectedWords, {
 				textAlign: 'center',
-				fontSize: 14,
-				fontFamily:'Microsoft YaHei'
+				fontFamily:'Arial',
+				fontSize:14
 			});
 
 			//alignedRightText;
