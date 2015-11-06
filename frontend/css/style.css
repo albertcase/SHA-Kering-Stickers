@@ -402,6 +402,13 @@ img {
   margin-top: -1rem;
   z-index: 10;
 }
+.photo-frame .slide-words .words-list {
+  overflow: hidden;
+}
+.photo-frame .slide-words li {
+  font-size: 14px;
+  display: block;
+}
 .photo-frame .slide-words .bx-wrapper .bx-controls-direction a:before {
   height: 0.08rem;
   -webkit-transform: rotate(45deg);

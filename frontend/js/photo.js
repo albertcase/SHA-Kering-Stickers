@@ -88,14 +88,17 @@ jQuery(document).ready(function($){
 		renderPhoto:function(){
 			$('.slide-words').removeClass('show');
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
+				ele = $('.slide-words .words-list li').eq(wordsNum);
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			var alignedRightText = new fabric.Text(selectedWords, {
-				left:0,
-				top:0.84 * $('#c').height(),
+				left:$('#c').width()/2 - ele.width()/2,
+				top:$('#c').height() - $('.slide-words').height()-5,
 				textAlign: 'center',
-				fontSize: 28
+				fontSize: 14,
+				fontFamily:'Microsoft YaHei'
 			});
-			alignedRightText.scale(0.5);
+
+			//alignedRightText;
 			alignedRightText.setColor('#000');
 			canvas.add(alignedRightText);
 			var renderPic = canvas.toDataURL({

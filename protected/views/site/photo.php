@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/fabric.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/fabric2.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/lrz.all.bundle.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/frontend/js/photo.js"></script>
 <div class="wrapper">
@@ -58,23 +58,20 @@
             <div class="slide-words">
                 <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>                I support the white ribbon for women
-            campaign #BeHerVoice#
+                    <li>I support the white ribbon for women
+campaign #BeHerVoice#
                     </li>
-                    <li>                Together, let’s raise our voice against
-            violence #BeHerVoice#
+                    <li>Together, let’s raise our voice against
+violence #BeHerVoice#
                     </li>
-                    <li>                Breaking the silence not lives, I
-            support #BeHerVoice#
+                    <li>Breaking the silence not lives, I
+support #BeHerVoice#
                     </li>
-                    <li>
-                       赋权女性，支持#BeHerVoice#
+                    <li>        赋权女性，支持#BeHerVoice#
                     </li>
-                    <li>
-                  反对暴力，为你发声#BeHerVoice#
+                    <li>        反对暴力，为你发声#BeHerVoice#
                     </li>
-                    <li>
-                  打破沉默，支持#BeHerVoice#
+                    <li>        打破沉默，支持#BeHerVoice#
                     </li>
                 </ul>
             </div>

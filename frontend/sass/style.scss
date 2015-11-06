@@ -287,6 +287,14 @@ img{width: 100%;}
     color: #000;
     margin-top: -1rem;
     z-index: 10;
+    .words-list{
+      overflow: hidden;
+
+    }
+    li{
+      font-size: 14px;
+      display: block;
+    }
     .bx-wrapper .bx-controls-direction a{
       &:before{
         height: 0.08rem;
