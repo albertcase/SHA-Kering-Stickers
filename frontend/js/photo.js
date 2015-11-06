@@ -40,6 +40,10 @@ jQuery(document).ready(function($){
 					step=1;
 					fabric.Image.fromURL(rst.base64,function(imgobj){
 						imgobj.scale(0.5);
+						imgobj.set({
+							hasControls:false,
+							hasBorders:false
+						});
 						canvas.add(imgobj);
 					});
 					$('.title-frame').addClass('hide');
