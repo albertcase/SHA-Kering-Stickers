@@ -65,7 +65,9 @@ jQuery(document).ready(function($){
 			$('.title-frame').removeClass('hide').html('给勇敢美丽的你挑选一个相框');
 			$('.slider-frame').addClass('show');
 			$('.page-3 .btn-ok').html('确定');
-			loadSlide($('.slider'));
+			if(!$('.slider-frame .bx-wrapper').length){
+				loadSlide($('.slider'));
+			}
 			$('.slide-words').removeClass('show');
 			if(canvas._objects.length>1){
 				canvas.remove(canvas._objects[1]);
@@ -88,7 +90,9 @@ jQuery(document).ready(function($){
 
 			$('.slider-frame').removeClass('show');
 			$('.slide-words').addClass('show');
-			loadSlide($('.words-list'));
+			if(!$('.words-list .bx-wrapper').length){
+				loadSlide($('.words-list'));
+			}
 			$('.title-frame').html('给您的照片”发声”');
 			$('.page-3 .btn-ok').html('完成');
 		},
@@ -98,8 +102,6 @@ jQuery(document).ready(function($){
 				ele = $('.slide-words .words-list li').eq(wordsNum);
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
 			var alignedRightText = new fabric.Text(selectedWords, {
-				left:$('#c').width()/2 - ele.width()/2,
-				top:$('#c').height() - $('.slide-words').height()-5,
 				textAlign: 'center',
 				fontSize: 14,
 				fontFamily:'Microsoft YaHei'
@@ -107,6 +109,10 @@ jQuery(document).ready(function($){
 
 			//alignedRightText;
 			alignedRightText.setColor('#000');
+			alignedRightText.set({
+				left:$('#c').width()/2 - alignedRightText.width/2,
+				top:$('#c').height() - alignedRightText.height-5
+			});
 			canvas.add(alignedRightText);
 			var renderPic = canvas.toDataURL({
 				format: 'jpeg',
@@ -208,11 +214,8 @@ jQuery(document).ready(function($){
 		}
 	});
 
-
-
 	//start
 	gotoPage(0);
-
 
 
 
