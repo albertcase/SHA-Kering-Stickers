@@ -9,7 +9,7 @@
         </div>
         <p class="p2-des">我们诚意邀请您通过白丝带女性权益活动，<br>
             把#BeHerVoice#的信息传扬出去。 <br>
-            请即参与比赛, 赢取丝黛拉•麦卡妮<br>
+            立即参与比赛, 赢取丝黛拉•麦卡妮<br>
             （Stella McCartney）时尚包袋！
         </p>
         <div class="p2-product">

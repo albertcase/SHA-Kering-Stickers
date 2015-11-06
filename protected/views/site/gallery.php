@@ -15,9 +15,6 @@
             <!--</li>-->
         </ul>
     </div>
-    <div class="button-share">
-        <a href="index">为你发声，请领取您的白丝带徽章。</a>
-    </div>
     <div class="shadow-overlay">
 
     </div>
