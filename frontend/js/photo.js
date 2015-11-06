@@ -64,7 +64,7 @@ jQuery(document).ready(function($){
 			step=2;
 			$('.title-frame').removeClass('hide').html('给勇敢美丽的你挑选一个相框');
 			$('.slider-frame').addClass('show');
-			$('.btn-ok').html('确定');
+			$('.page-3 .btn-ok').html('确定');
 			loadSlide($('.slider'));
 			$('.slide-words').removeClass('show');
 			if(canvas._objects.length>1){
@@ -90,7 +90,7 @@ jQuery(document).ready(function($){
 			$('.slide-words').addClass('show');
 			loadSlide($('.words-list'));
 			$('.title-frame').html('给您的照片”发声”');
-			$('.btn-ok').html('完成');
+			$('.page-3 .btn-ok').html('完成');
 		},
 		renderPhoto:function(){
 			$('.slide-words').removeClass('show');
