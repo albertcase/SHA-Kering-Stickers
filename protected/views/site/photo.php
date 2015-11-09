@@ -60,7 +60,7 @@
             <div class="slide-words">
                 <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>I support the White Ribbon for women
+                    <li>I support the White Ribbon For Women
 campaign #BeHerVoice#
                     </li>
                     <li>        赋权女性，支持#BeHerVoice#

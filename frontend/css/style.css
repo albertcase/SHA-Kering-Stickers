@@ -398,13 +398,13 @@ img {
 }
 .photo-frame .slide-words {
   display: none;
-  position: relative;
+  position: absolute;
   width: 80%;
   text-align: center;
-  margin: 0.3rem auto;
   color: #000;
-  margin-top: -1rem;
   z-index: 10;
+  left: 10%;
+  bottom: 10px;
 }
 .photo-frame .slide-words .words-list {
   overflow: hidden;
@@ -432,7 +432,7 @@ img {
 }
 .photo-frame .slide-words .bx-controls-direction {
   position: absolute;
-  bottom: -0.8rem;
+  bottom: -1rem;
   width: 100%;
 }
 .photo-frame .slider li {
@@ -442,7 +442,7 @@ img {
 .photo-frame .title-frame {
   font-size: 0.28rem;
   text-align: center;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
   letter-spacing: 2px;
 }
 

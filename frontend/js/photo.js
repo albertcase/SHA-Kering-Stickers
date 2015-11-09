@@ -99,7 +99,7 @@ jQuery(document).ready(function($){
 			if(!$('.words-list .bx-wrapper').length){
 				loadSlide($('.words-list'));
 			}
-			$('.title-frame').html('给您的照片”发声”');
+			$('.title-frame').html('给您的照片“发声”');
 			$('.page-3 .btn-ok').html('完成');
 		},
 		renderPhoto:function(){
@@ -222,7 +222,7 @@ jQuery(document).ready(function($){
 
 	//start
 	gotoPage(0);
-
+	//photo.finishFrame();
 
 
 
