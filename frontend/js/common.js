@@ -7,7 +7,7 @@ jQuery(document).ready(function($){
 	window.ajaxloading = {
 		showLoading:function(){
 			if(!$('.ajax-loading').length){
-				$('body').append('<div class="ajax-loading">'+
+				$('.wrapper').append('<div class="ajax-loading">'+
 					'<div class="loading"><span class="icon-loading"></span>loading...</div>'+ '</div>');
 			}
 		},

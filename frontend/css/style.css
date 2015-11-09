@@ -826,3 +826,15 @@ img {
     tranform: rotate(360deg);
   }
 }
+.gallery-page .ajax-loading {
+  width: 2rem;
+  height: 1rem;
+  left: 50%;
+  margin-left: -1rem;
+  bottom: 0.5rem;
+  top: auto;
+  background: transparent;
+}
+.gallery-page .ajax-loading .loading {
+  background: transparent;
+}

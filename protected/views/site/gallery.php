@@ -1,5 +1,5 @@
 <!--For the login page-->
-<div class="gallery-page page">
+<div class="gallery-page page wrapper">
     <p class="gp-1">
         制止暴力不公，推动女性发展。<br>
         我们诚意邀请您通过白丝带女性权益活动，<br>

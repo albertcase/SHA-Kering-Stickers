@@ -650,3 +650,19 @@ img{width: 100%;}
   0%{ -webkit-transform: rotate(0deg); tranform: rotate(0deg);}
   100%{ -webkit-transform: rotate(360deg); tranform: rotate(360deg);}
 }
+
+//for gallery page
+.gallery-page{
+  .ajax-loading{
+    width: 2rem;
+    height: 1rem;
+    left: 50%;
+    margin-left: -1rem;
+    bottom: 0.5rem;
+    top: auto;
+    background: transparent;
+    .loading{
+       background: transparent;
+    }
+  }
+}

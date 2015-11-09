@@ -30,7 +30,6 @@
 		<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/logo.png" alt=""/>
 	</div>
 	<?php echo $content; ?>
-
 </body>
 </html>
 
