@@ -525,7 +525,7 @@ img{width: 100%;}
   }
 }
 .shadow-overlay{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 2;
