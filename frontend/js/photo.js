@@ -22,6 +22,7 @@ jQuery(document).ready(function($){
 	};
 
 	var step=0;
+	var renderPic;
 	//photo
 	var photo = {
 		initPhoto:function(){
@@ -107,48 +108,46 @@ jQuery(document).ready(function($){
 			var wordsNum = $('.slide-words .bx-pager-link.active').parent().index()+1;
 				ele = $('.slide-words .words-list li').eq(wordsNum);
 				selectedWords = $('.slide-words .words-list li').eq(wordsNum).html();
-			var alignedRightText = new fabric.Text(selectedWords, {
-				textAlign: 'center',
-				fontFamily:'Arial',
-				fontSize:14
-			});
 
-			//alignedRightText;
-			alignedRightText.setColor('#000');
-			alignedRightText.set({
-				left:$('#c').width()/2 - alignedRightText.width/2,
-				top:$('#c').height() - alignedRightText.height
-			});
-			canvas.add(alignedRightText);
-			var renderPic = canvas.toDataURL({
-				format: 'jpeg',
-				quality: 1
-			});
-			//hide the button
-			$('.btn-ok').addClass('hide');
-			ajaxloading.showLoading();
-			$.ajax({
-				url:'/api/createImg',
-				type:'POST',
-				dataType:'json',
-				data:{
-					image:renderPic
-				},
-				success:function(result){
-					if(result.code==1){
-					//	success
-						$('.p4-photo').html('<img src="'+window.location.origin+'/'+result.msg+'">');
-						gotoPage(2);
-						//show the button
-						$('.btn-ok').removeClass('hide');
-						var shareimg = window.location.origin+'/'+result.msg,
-							sharetitle='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
-							sharedesc='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
-							sharelink=window.location.origin+'/site/gallery';
-						wxshare(sharetitle,shareimg,sharelink,sharedesc);
-						ajaxloading.hideLoading();
+			fabric.Image.fromURL(ele.find('img').attr('src'),function(imgobj2){
+				imgobj2.set({
+					left:$('#c').width()*0.1,
+					top:$('#c').height() - $('#c').width()*0.8*65/500-15,
+					width:$('#c').width()*0.8,
+					height:$('#c').width()*0.8*65/500,
+					selectable:false
+				});
+				canvas.add(imgobj2);
+
+				renderPic = canvas.toDataURL({
+					format: 'png',
+					quality: 1
+				});
+				$('.btn-ok').addClass('hide');
+				ajaxloading.showLoading();
+				$.ajax({
+					url:'/api/createImg',
+					type:'POST',
+					dataType:'json',
+					data:{
+						image:renderPic
+					},
+					success:function(result){
+						if(result.code==1){
+							//	success
+							$('.p4-photo').html('<img src="'+window.location.origin+'/'+result.msg+'">');
+							gotoPage(2);
+							//show the button
+							$('.btn-ok').removeClass('hide');
+							var shareimg = window.location.origin+'/'+result.msg,
+								sharetitle='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
+								sharedesc='制止暴力不公，推动女性发展。我很荣幸支持了白丝带女性权益活动！#BeHerVoice#',
+								sharelink=window.location.origin+'/site/gallery';
+							wxshare(sharetitle,shareimg,sharelink,sharedesc);
+							ajaxloading.hideLoading();
+						}
 					}
-				}
+				});
 			});
 		}
 	};
@@ -222,9 +221,6 @@ jQuery(document).ready(function($){
 
 	//start
 	gotoPage(0);
-	//photo.finishFrame();
-
-
 
 });
 

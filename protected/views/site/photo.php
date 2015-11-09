@@ -60,20 +60,23 @@
             <div class="slide-words">
                 <!-- 文字请严格按照书写换行来，然后canvas处理可识别书写换行,16个空格-->
                 <ul class="words-list">
-                    <li>I support the White Ribbon For Women
-campaign #BeHerVoice#
+                    <li>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/t1.png" alt=""/>
                     </li>
-                    <li>        赋权女性，支持#BeHerVoice#
+                    <li>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/t2.png" alt=""/>
                     </li>
-                    <li>Together, let’s raise our voice against
-violence #BeHerVoice#
+                    <li>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/t3.png" alt=""/>
                     </li>
-                    <li>        反对暴力，为你发声#BeHerVoice#
+                    <li>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/t4.png" alt=""/>
                     </li>
-                    <li>Breaking the silence not lives, I
-support #BeHerVoice#
+                    <li>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/t5.png" alt=""/>
                     </li>
-                    <li>        打破沉默，支持#BeHerVoice#
+                    <li>
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/theme-kr/t6.png" alt=""/>
                     </li>
                 </ul>
             </div>
