@@ -91,7 +91,7 @@ class ApiController extends Controller
 	public function actionList()
 	{
 		$db = Yii::app()->db;
-	    $sql = "select * from same_image,same_weixin_info";
+	    $sql = "select * from same_image a,same_weixin_info b where a.weixin_id=b.id";
 		$result = $db->createCommand($sql)->select()->queryAll();
 		Yii::import('ext.emoji.emoji', true);
 		for ($i = 0; $i < count($result); $i++) {
