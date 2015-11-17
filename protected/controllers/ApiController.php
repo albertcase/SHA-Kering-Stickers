@@ -88,6 +88,18 @@ class ApiController extends Controller
 		Yii::app()->end();
 	}
 
+	public function actionList()
+	{
+		$db = Yii::app()->db;
+	    $sql = "select * from same_image,same_weixin_info";
+		$result = $db->createCommand($sql)->select()->queryAll();
+		Yii::import('ext.emoji.emoji', true);
+		for ($i = 0; $i < count($result); $i++) {
+			$name = json_decode($result[$i]['nickname'], true);
+			$result[$i]['nickname'] = emoji_unified_to_html($name['name']);
+		}
+		$this->render('/site/list', array('list' => $result));
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
